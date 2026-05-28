@@ -57,9 +57,9 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 48px;
-      background: rgba(15,31,30,0.85);
+      background: #fff;
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,181,163,0.15);
+      border-bottom: 1px solid rgba(0,181,163,0.15); box-shadow: 0 1px 20px rgba(0,0,0,0.06);
     }
 
     .nav-logo img { height: 36px; display: block; }
@@ -82,7 +82,7 @@
       text-transform: uppercase;
       padding: 8px 20px;
       border-radius: 100px;
-      color: rgba(255,255,255,0.55);
+      color: #5A7270;
       transition: all 0.25s ease;
     }
 
@@ -109,7 +109,7 @@
       text-decoration: none;
       transition: all 0.2s ease;
     }
-    .nav-cta:hover { background: var(--teal-dark); color: var(--white); }
+    .nav-cta { color: #fff !important; } .nav-cta:hover { background: var(--teal-dark); }
 
     /* ── HERO ── */
     .hero {
@@ -262,8 +262,9 @@
 
     /* ── FOOTER ── */
     footer {
-      padding: 40px 48px;
-      border-top: 1px solid rgba(0,181,163,0.12);
+      padding: 36px 48px;
+      border-top: 1px solid rgba(0,181,163,0.15);
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -275,19 +276,19 @@
 
     .footer-text {
       font-size: 12px;
-      color: var(--muted);
+      color: #5A7270;
       line-height: 1.6;
       text-align: center;
     }
 
-    .footer-text a { color: var(--muted); text-decoration: underline; }
+    .footer-text a { color: #5A7270; text-decoration: underline; }
 
     .footer-eu {
       display: flex;
       align-items: center;
       gap: 10px;
       font-size: 11px;
-      color: var(--muted);
+      color: #5A7270;
     }
 
     .eu-badge {
@@ -328,7 +329,7 @@
       color: rgba(255,255,255,0.4);
       transition: color 0.2s;
     }
-    .lang-toggle a.active { color: var(--teal); }
+    .lang-toggle a.active { color: var(--teal); } .lang-toggle a { color: #5A7270; }
     .lang-toggle a:hover  { color: var(--white); }
 
     @media (max-width: 768px) {
@@ -411,12 +412,11 @@
   <footer>
     <img src="logo-scritta-small.png" alt="ARyze" />
     <div class="footer-text">
-      &copy; 2025 ARyze &mdash; Una joint venture <strong>Levery S.r.l.</strong> + <strong>Exvirience S.r.l.</strong><br>
+      &copy; 2026 ARyze &mdash; Una joint venture <strong>Levery S.r.l.</strong> + <strong>Exvirience S.r.l.</strong><br>
       <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="cookies.html">Cookie Policy</a>
     </div>
     <div class="footer-eu">
-      <span class="eu-badge">EU Co-funded</span>
-      <span>This project was co-funded by the<br>European Union's Single Market Programme.</span>
+      <span style="font-size:11px;color:#5A7270;max-width:300px;line-height:1.6;">This project was co-funded by the European Union's Single Market Programme.</span>
     </div>
   </footer>
 
