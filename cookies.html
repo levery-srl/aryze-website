@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARyze — Cookie Policy</title>
+  <link rel="icon" type="image/png" href="logo.jpg" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KMV018LXB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3KMV018LXB');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --teal:      #00B5A3;
+      --ink:       #0F1F1E;
+      --muted:     #6B7F7E;
+      --border:    rgba(0,181,163,0.18);
+      --white:     #FFFFFF;
+      --surface:   rgba(255,255,255,0.04);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--ink); color: var(--white); min-height: 100vh; }
+
+    nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(15,31,30,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-logo img { height: 30px; display: block; }
+    .nav-back { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: gap 0.2s; }
+    .nav-back:hover { gap: 12px; }
+
+    .page-header { padding: 80px 48px 64px; border-bottom: 1px solid var(--border); max-width: 860px; margin: 0 auto; }
+    .page-label { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(32px, 4vw, 52px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .page-header p { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+    .content { max-width: 860px; margin: 0 auto; padding: 64px 48px 96px; }
+
+    .content h2 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; color: var(--teal); margin-top: 48px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .content h2:first-child { margin-top: 0; }
+    .content p { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+    .content ul { margin: 0 0 16px 0; padding-left: 0; list-style: none; }
+    .content ul li { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.7); padding-left: 20px; position: relative; margin-bottom: 8px; }
+    .content ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); opacity: 0.5; }
+    .content a { color: var(--teal); text-decoration: underline; }
+
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+    .cookie-table th {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .cookie-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(0,181,163,0.08);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.6;
+      vertical-align: top;
+    }
+    .cookie-table tr:last-child td { border-bottom: none; }
+    .cookie-table td:first-child { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 600; color: var(--white); white-space: nowrap; }
+
+    .badge {
+      display: inline-block;
+      font-family: 'Syne', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-right: 4px;
+    }
+    .badge-tech { background: rgba(0,181,163,0.12); color: var(--teal); border: 1px solid rgba(0,181,163,0.3); }
+    .badge-analytics { background: rgba(255,180,0,0.1); color: #FFB400; border: 1px solid rgba(255,180,0,0.25); }
+
+    .info-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin: 24px 0; }
+    .info-box p { margin: 0; }
+
+    footer { padding: 40px 48px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer img { height: 24px; opacity: 0.55; }
+    .footer-text { font-size: 12px; color: var(--muted); line-height: 1.6; text-align: center; }
+    .footer-text a { color: var(--muted); text-decoration: underline; }
+    .eu-badge { background: rgba(0,181,163,0.1); border: 1px solid rgba(0,181,163,0.2); border-radius: 6px; padding: 4px 10px; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; color: var(--teal); white-space: nowrap; font-family: 'Syne', sans-serif; }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .page-header, .content { padding-left: 24px; padding-right: 24px; }
+      .cookie-table { display: block; overflow-x: auto; }
+      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo-scritta-small.png" alt="ARyze" />
+    </a>
+    <a class="nav-back" href="index.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="#00B5A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Torna alla home
+    </a>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-label">Informativa legale</div>
+    <h1>Cookie Policy</h1>
+    <p>Ultimo aggiornamento: maggio 2025 &nbsp;&middot;&nbsp; Versione 1.0</p>
+  </div>
+
+  <div class="content">
+
+    <h2>1. Cosa sono i cookie</h2>
+    <p>I cookie sono piccoli file di testo che i siti web memorizzano sul dispositivo dell'utente durante la navigazione. Vengono utilizzati per far funzionare il sito in modo efficiente, per ricordare le preferenze dell'utente e per raccogliere informazioni statistiche aggregate sulla navigazione.</p>
+
+    <h2>2. Cookie utilizzati da questo sito</h2>
+    <p>Il sito <strong>aryze.it</strong> utilizza esclusivamente le seguenti tipologie di cookie:</p>
+
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Durata</th>
+          <th>Finalità</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>_ga</td>
+          <td><span class="badge badge-analytics">Analitico</span></td>
+          <td>2 anni</td>
+          <td>Google Analytics 4 — distingue gli utenti unici per analisi del traffico aggregata</td>
+        </tr>
+        <tr>
+          <td>_ga_*</td>
+          <td><span class="badge badge-analytics">Analitico</span></td>
+          <td>2 anni</td>
+          <td>Google Analytics 4 — mantiene lo stato della sessione di analisi</td>
+        </tr>
+        <tr>
+          <td>_gid</td>
+          <td><span class="badge badge-analytics">Analitico</span></td>
+          <td>24 ore</td>
+          <td>Google Analytics 4 — distingue gli utenti per sessione giornaliera</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p>Questo sito <strong>non utilizza cookie di profilazione</strong>, cookie di terze parti a fini pubblicitari, né cookie di tracciamento cross-site. Non esistono banner di terze parti, social plugin o pixel di tracciamento integrati.</p>
+    </div>
+
+    <h2>3. Cookie analitici — Google Analytics 4</h2>
+    <p>Il sito utilizza Google Analytics 4 (GA4), un servizio di analisi web fornito da Google LLC. GA4 raccoglie dati di navigazione in forma anonimizzata e aggregata per consentire al Titolare di comprendere come gli utenti interagiscono con il sito (pagine visitate, durata della sessione, provenienza geografica aggregata).</p>
+    <p>Il servizio è configurato con:</p>
+    <ul>
+      <li>Anonimizzazione dell'indirizzo IP attiva</li>
+      <li>Nessuna condivisione dei dati con Google per finalità pubblicitarie</li>
+      <li>Dati trattati in forma aggregata, non riferibili a singoli individui identificati</li>
+    </ul>
+    <p>Per maggiori informazioni sulle modalità di trattamento dei dati da parte di Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+    <p>Per disabilitare il tracciamento di Google Analytics: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">tools.google.com/dlpage/gaoptout</a></p>
+
+    <h2>4. Come gestire o disabilitare i cookie</h2>
+    <p>L'utente può gestire, bloccare o eliminare i cookie in qualsiasi momento attraverso le impostazioni del proprio browser. Di seguito i link alle istruzioni per i browser più comuni:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/it/kb/Gestione%20dei%20cookie" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+      <li><a href="https://support.microsoft.com/it-it/microsoft-edge/eliminare-i-cookie-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+    </ul>
+    <p>La disabilitazione dei cookie analitici non compromette la fruibilità del sito, ma impedisce al Titolare di raccogliere statistiche aggregate sulla navigazione.</p>
+
+    <h2>5. Consenso</h2>
+    <p>I cookie analitici di Google Analytics 4, essendo configurati con anonimizzazione dell'IP e senza finalità pubblicitarie, possono essere classificati come cookie analitici di terza parte "assimilabili ai tecnici" secondo le Linee guida del Garante Privacy italiano del 10 giugno 2021, e pertanto non richiedono consenso preventivo.</p>
+    <p>Il Titolare monitora costantemente l'evoluzione della normativa in materia e si riserva di aggiornare questa policy e le misure tecniche adottate in caso di variazioni normative.</p>
+
+    <h2>6. Contatti</h2>
+    <p>Per qualsiasi domanda relativa all'utilizzo dei cookie su questo sito, è possibile contattare il Titolare all'indirizzo: <a href="mailto:info@aryze.it">info@aryze.it</a></p>
+    <p>Per informazioni complete sul trattamento dei dati personali, consultare la <a href="privacy.html">Privacy Policy</a>.</p>
+
+  </div>
+
+  <footer>
+    <img src="logo-scritta-small.png" alt="ARyze" />
+    <div class="footer-text">
+      &copy; 2025 ARyze &mdash; Levery S.r.l. + Exvirience S.r.l.<br>
+      <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="cookies.html">Cookie Policy</a>
+    </div>
+    <span class="eu-badge">EU Co-funded</span>
+  </footer>
+
+</body>
+</html>

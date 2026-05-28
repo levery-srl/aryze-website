@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARyze O&M — Sai cosa cerchi. ARyze te lo trova, dove sei.</title>
+  <meta name="description" content="Manuali, schede tecniche, storia degli interventi: tutto accessibile sull'impianto che hai davanti. Connetti esperti in diretta, senza trasferte." />
+  <link rel="icon" type="image/png" href="logo.jpg" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KMV018LXB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3KMV018LXB');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --teal:       #00B5A3;
+      --teal-dark:  #008F80;
+      --teal-light: #E6F7F5;
+      --ink:        #0F1F1E;
+      --ink-mid:    #2D3D3C;
+      --muted:      #6B7F7E;
+      --border:     rgba(0,181,163,0.18);
+      --white:      #FFFFFF;
+      --off-white:  #F5FAFA;
+      --surface:    rgba(255,255,255,0.04);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--ink);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(15,31,30,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo img { height: 32px; display: block; }
+
+    .nav-segments {
+      display: flex;
+      gap: 4px;
+      background: rgba(0,181,163,0.08);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px;
+    }
+
+    .nav-segments a {
+      text-decoration: none;
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 100px;
+      color: rgba(255,255,255,0.45);
+      transition: all 0.25s ease;
+    }
+
+    .nav-segments a:hover { color: var(--white); background: rgba(0,181,163,0.15); }
+    .nav-segments a.active { background: var(--teal); color: var(--ink); }
+
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+
+    .lang-toggle { display: flex; gap: 2px; font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; }
+    .lang-toggle a { padding: 4px 8px; border-radius: 4px; text-decoration: none; color: rgba(255,255,255,0.35); transition: color 0.2s; }
+    .lang-toggle a.active { color: var(--teal); }
+    .lang-toggle a:hover { color: var(--white); }
+
+    .nav-cta {
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 9px 22px;
+      background: var(--teal);
+      color: var(--ink);
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-cta:hover { background: var(--teal-dark); color: var(--white); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('XR-04.jpg');
+      background-size: cover;
+      background-position: center right;
+      filter: brightness(0.2);
+      z-index: 0;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15,31,30,0.95) 45%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 660px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(36px, 4.8vw, 64px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em { font-style: normal; color: var(--teal); }
+
+    .hero p {
+      font-size: clamp(15px, 1.4vw, 18px);
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.68);
+      margin-bottom: 44px;
+      max-width: 520px;
+    }
+
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn-primary {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      background: var(--teal);
+      color: var(--ink);
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--teal-dark); color: var(--white); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,181,163,0.3); }
+
+    .btn-secondary {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--teal); color: var(--teal); }
+
+    section { padding: 96px 48px; }
+
+    .section-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      max-width: 580px;
+      margin-bottom: 64px;
+    }
+
+    /* PROBLEMA */
+    .problema { background: rgba(0,181,163,0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+    .pain-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      transition: border-color 0.25s;
+    }
+    .pain-card:hover { border-color: rgba(0,181,163,0.45); }
+
+    .pain-icon { width: 44px; height: 44px; margin-bottom: 20px; }
+
+    .pain-card h3 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+    .pain-card p { font-size: 14px; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.58); }
+
+    /* SOLUZIONE */
+    .feature-block { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 80px; }
+    .feature-block:last-child { margin-bottom: 0; }
+    .feature-block.reverse { direction: rtl; }
+    .feature-block.reverse > * { direction: ltr; }
+
+    .feature-number { font-family: 'Syne', sans-serif; font-size: 80px; font-weight: 800; color: rgba(0,181,163,0.08); line-height: 1; margin-bottom: -16px; }
+
+    .feature-text h3 { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+    .feature-text p { font-size: 16px; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.65); }
+
+    .feature-visual {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .feature-visual img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+    .feature-visual.placeholder { flex-direction: column; gap: 12px; }
+    .feature-visual.placeholder svg { opacity: 0.25; }
+    .feature-visual.placeholder span { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.2); font-family: 'Syne', sans-serif; }
+
+    .video-placeholder {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 64px;
+    }
+    .video-placeholder p { font-size: 13px; color: rgba(255,255,255,0.25); font-family: 'Syne', sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* TARGET */
+    .target-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+    .target-card { border: 1px solid var(--border); border-radius: 16px; padding: 32px 28px; transition: all 0.25s; }
+    .target-card:hover { background: var(--surface); border-color: var(--teal); }
+
+    .target-icon { width: 40px; height: 40px; margin-bottom: 18px; }
+    .target-card h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .target-card p { font-size: 14px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.55); }
+
+    /* PIANI */
+    .piani { background: rgba(0,181,163,0.03); border-top: 1px solid var(--border); }
+    .piani-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+    .piano-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 36px 32px; position: relative; transition: all 0.25s; }
+    .piano-card.featured { background: rgba(0,181,163,0.08); border-color: var(--teal); }
+
+    .piano-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--teal); color: var(--ink); font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 14px; border-radius: 100px; white-space: nowrap; }
+
+    .piano-name { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .piano-card h3 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 24px; }
+
+    .piano-features { list-style: none; margin-bottom: 32px; }
+    .piano-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; font-weight: 300; line-height: 1.5; color: rgba(255,255,255,0.7); margin-bottom: 10px; }
+    .piano-features li::before { content: ''; display: block; width: 16px; height: 16px; min-width: 16px; background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='7.5' stroke='%2300B5A3' stroke-opacity='0.4'/%3E%3Cpath d='M5 8L7 10L11 6' stroke='%2300B5A3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; margin-top: 1px; }
+
+    .btn-outline { display: block; text-align: center; font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 12px 24px; border: 1px solid var(--teal); border-radius: 100px; color: var(--teal); text-decoration: none; transition: all 0.2s; }
+    .btn-outline:hover, .piano-card.featured .btn-outline { background: var(--teal); color: var(--ink); }
+
+    /* CREDIBILITÀ */
+    .credibilita { border-top: 1px solid var(--border); }
+
+    .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
+
+    .cred-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .cred-card .co-name { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--teal); margin-bottom: 8px; }
+    .cred-card p { font-size: 14px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.55); }
+
+    .eu-strip { display: flex; align-items: center; gap: 16px; background: rgba(0,181,163,0.06); border: 1px solid var(--border); border-radius: 12px; padding: 20px 28px; }
+    .eu-strip .eu-flag { font-size: 28px; flex-shrink: 0; }
+    .eu-strip p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    /* FORM */
+    .form-section { background: linear-gradient(135deg, rgba(0,181,163,0.06) 0%, transparent 60%); border-top: 1px solid var(--border); scroll-margin-top: 80px; }
+
+    .form-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+
+    .form-intro h2 { font-family: 'Syne', sans-serif; font-size: clamp(28px, 3vw, 42px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .form-intro h2 span { color: var(--teal); }
+    .form-intro p { font-size: 16px; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.58); margin-bottom: 36px; }
+
+    .form-promise { display: flex; flex-direction: column; gap: 14px; }
+    .promise-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.65); }
+    .promise-dot { width: 8px; height: 8px; min-width: 8px; background: var(--teal); border-radius: 50%; }
+
+    .contact-form { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 24px; padding: 44px 40px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 8px; }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 12px 16px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300; color: var(--white); outline: none; transition: border-color 0.2s; appearance: none;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal); background: rgba(0,181,163,0.05); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-group select option { background: #1a2e2d; color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit { width: 100%; font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 16px 32px; background: var(--teal); color: var(--ink); border: none; border-radius: 100px; cursor: pointer; transition: all 0.2s ease; margin-top: 8px; }
+    .form-submit:hover { background: var(--teal-dark); color: var(--white); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,181,163,0.3); }
+
+    .form-privacy { font-size: 11px; color: rgba(255,255,255,0.28); line-height: 1.6; margin-top: 16px; text-align: center; }
+    .form-privacy a { color: rgba(255,255,255,0.4); }
+
+    /* FOOTER */
+    footer { padding: 40px 48px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer img { height: 26px; opacity: 0.65; }
+    .footer-text { font-size: 12px; color: var(--muted); line-height: 1.6; text-align: center; }
+    .footer-text a { color: var(--muted); text-decoration: underline; }
+    .footer-eu { display: flex; align-items: center; gap: 10px; font-size: 11px; color: var(--muted); }
+    .eu-badge { background: rgba(0,181,163,0.1); border: 1px solid rgba(0,181,163,0.2); border-radius: 6px; padding: 4px 10px; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; color: var(--teal); white-space: nowrap; font-family: 'Syne', sans-serif; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-eyebrow { animation: fadeUp 0.5s ease both; }
+    .hero h1      { animation: fadeUp 0.5s 0.08s ease both; }
+    .hero p       { animation: fadeUp 0.5s 0.16s ease both; }
+    .hero-actions { animation: fadeUp 0.5s 0.24s ease both; }
+
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .nav-segments { display: none; }
+      section { padding: 64px 24px; }
+      .hero { padding: 100px 24px 60px; }
+      .pain-grid, .target-grid, .piani-grid { grid-template-columns: 1fr; }
+      .cred-grid { grid-template-columns: 1fr; }
+      .feature-block, .feature-block.reverse { grid-template-columns: 1fr; direction: ltr; gap: 40px; }
+      .form-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo-scritta-small.png" alt="ARyze" />
+    </a>
+    <div class="nav-segments">
+      <a href="cantiere.html">Cantiere</a>
+      <a href="om.html" class="active">O&amp;M</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <a href="index.html" class="active">IT</a>
+        <span style="color:rgba(255,255,255,0.2)">|</span>
+        <a href="#">EN</a>
+      </div>
+      <a class="nav-cta" href="#demo">Richiedi demo</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">ARyze per l'O&amp;M</div>
+      <h1>Sai cosa cerchi.<br><em>ARyze te lo trova,</em> dove sei.</h1>
+      <p>Manuali, schede tecniche, storia degli interventi: tutto accessibile sull'impianto che hai davanti, nel momento in cui intervieni. Se serve un esperto, lo connetti in diretta — senza trasferte, senza attese.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#demo">Richiedi una demo gratuita</a>
+        <a class="btn-secondary" href="#soluzione">Scopri come funziona</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="problema">
+    <div class="section-label">Il problema</div>
+    <h2 class="section-title">Ogni minuto di fermo ha un costo. Trovare le informazioni non dovrebbe aggiungersi.</h2>
+    <p class="section-sub">Il manutentore sa cosa fare. Il problema è il tempo perso prima di poterlo fare.</p>
+
+    <div class="pain-grid">
+      <div class="pain-card">
+        <svg class="pain-icon" viewBox="0 0 44 44" fill="none">
+          <rect width="44" height="44" rx="12" fill="rgba(0,181,163,0.08)"/>
+          <path d="M14 12h16v20H14z" stroke="#00B5A3" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+          <path d="M18 18h8M18 22h8M18 26h5" stroke="#00B5A3" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="28" y1="28" x2="34" y2="34" stroke="#FF5555" stroke-width="2" stroke-linecap="round"/>
+          <line x1="34" y1="28" x2="28" y2="34" stroke="#FF5555" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <h3>Il documento giusto non è mai a portata di mano</h3>
+        <p>Il manutentore arriva, sa cosa fare, ma il manuale è in sede, la scheda tecnica è su un portale diverso, la storia dell'impianto è nella testa di chi non c'è.</p>
+      </div>
+
+      <div class="pain-card">
+        <svg class="pain-icon" viewBox="0 0 44 44" fill="none">
+          <rect width="44" height="44" rx="12" fill="rgba(0,181,163,0.08)"/>
+          <circle cx="18" cy="20" r="6" stroke="#00B5A3" stroke-width="1.5" fill="none"/>
+          <circle cx="30" cy="20" r="6" stroke="#00B5A3" stroke-width="1.5" fill="none"/>
+          <path d="M24 20h-6M30 20h-6" stroke="rgba(0,181,163,0.3)" stroke-width="1.5"/>
+          <path d="M14 32c0-4 2-6 4-6M26 32c0-4 2-6 4-6" stroke="#00B5A3" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Gli esperti non possono essere ovunque</h3>
+        <p>Mandare un tecnico senior su ogni intervento non è sostenibile. Lasciare il junior da solo è rischioso. Nel mezzo c'è un gap che costa.</p>
+      </div>
+
+      <div class="pain-card">
+        <svg class="pain-icon" viewBox="0 0 44 44" fill="none">
+          <rect width="44" height="44" rx="12" fill="rgba(0,181,163,0.08)"/>
+          <path d="M13 32l5-10 4 6 4-8 5 12" stroke="#00B5A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M13 14h8M13 18h6" stroke="rgba(0,181,163,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 2"/>
+        </svg>
+        <h3>Gli interventi non lasciano traccia utile</h3>
+        <p>Foto su WhatsApp, note su carta, verbali compilati a memoria: i dati ci sono ma non sono strutturati, non sono cercabili, non migliorano il lavoro successivo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUZIONE -->
+  <section id="soluzione">
+    <div class="section-label">La soluzione</div>
+    <h2 class="section-title">ARyze porta l'informazione giusta sull'impianto che hai davanti, nel momento in cui serve.</h2>
+    <p class="section-sub">Tre funzionalità che trasformano ogni intervento di manutenzione in un'operazione precisa, tracciata e scalabile.</p>
+
+    <div class="feature-block">
+      <div class="feature-text">
+        <div class="feature-number">01</div>
+        <h3>Documentazione tecnica sempre accessibile</h3>
+        <p>Cerca per voce o inquadra l'impianto. Manuali, schede, certificazioni e storia degli interventi precedenti: tutto lì, senza portali, senza telefonate in sede.</p>
+      </div>
+      <div class="feature-visual">
+        <img src="XR-03.jpg" alt="Accesso documentazione tecnica ARyze" />
+      </div>
+    </div>
+
+    <div class="feature-block reverse">
+      <div class="feature-text">
+        <div class="feature-number">02</div>
+        <h3>Il tuo esperto in remoto, come se fosse lì</h3>
+        <p>Connetti il tecnico senior in diretta. Vede il campo, guida l'intervento, prende decisioni. Risolvi in remoto quello che prima richiedeva una trasferta.</p>
+      </div>
+      <div class="feature-visual">
+        <img src="XR-04.jpg" alt="Connessione remota esperto ARyze" />
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="feature-text">
+        <div class="feature-number">03</div>
+        <h3>Verbale di intervento generato automaticamente</h3>
+        <p>A intervento concluso, ARyze ha già strutturato foto, note e checklist in un verbale pronto. Nessuna compilazione, nessun dato perso, tutto tracciabile.</p>
+      </div>
+      <div class="feature-visual" style="background:rgba(0,181,163,0.04); padding: 32px;">
+        <svg viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <!-- Main verbale document -->
+          <rect x="50" y="16" width="210" height="228" rx="10" fill="rgba(0,181,163,0.05)" stroke="rgba(0,181,163,0.25)" stroke-width="1.5"/>
+          <rect x="50" y="16" width="210" height="38" rx="10" fill="rgba(0,181,163,0.1)"/>
+          <rect x="50" y="42" width="210" height="12" rx="0" fill="rgba(0,181,163,0.1)"/>
+          <!-- Title area -->
+          <rect x="72" y="26" width="90" height="7" rx="3.5" fill="rgba(0,181,163,0.5)"/>
+          <rect x="72" y="38" width="60" height="5" rx="2.5" fill="rgba(0,181,163,0.25)"/>
+          <!-- Section: intervento -->
+          <rect x="72" y="66" width="50" height="5" rx="2.5" fill="rgba(0,181,163,0.35)"/>
+          <rect x="72" y="78" width="148" height="5" rx="2.5" fill="rgba(255,255,255,0.12)"/>
+          <rect x="72" y="88" width="120" height="5" rx="2.5" fill="rgba(255,255,255,0.08)"/>
+          <!-- Section: checklist -->
+          <rect x="72" y="108" width="50" height="5" rx="2.5" fill="rgba(0,181,163,0.35)"/>
+          <!-- Checklist items with checkmarks -->
+          <rect x="72" y="120" width="10" height="10" rx="2" fill="rgba(0,181,163,0.15)" stroke="rgba(0,181,163,0.4)" stroke-width="1"/>
+          <path d="M74 125l2 2 4-4" stroke="#00B5A3" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="88" y="122" width="90" height="5" rx="2.5" fill="rgba(255,255,255,0.12)"/>
+          <rect x="72" y="136" width="10" height="10" rx="2" fill="rgba(0,181,163,0.15)" stroke="rgba(0,181,163,0.4)" stroke-width="1"/>
+          <path d="M74 141l2 2 4-4" stroke="#00B5A3" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="88" y="138" width="110" height="5" rx="2.5" fill="rgba(255,255,255,0.1)"/>
+          <rect x="72" y="152" width="10" height="10" rx="2" fill="rgba(0,181,163,0.15)" stroke="rgba(0,181,163,0.4)" stroke-width="1"/>
+          <path d="M74 157l2 2 4-4" stroke="#00B5A3" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="88" y="154" width="75" height="5" rx="2.5" fill="rgba(255,255,255,0.1)"/>
+          <!-- Photos strip -->
+          <rect x="72" y="176" width="36" height="28" rx="4" fill="rgba(0,181,163,0.12)" stroke="rgba(0,181,163,0.2)" stroke-width="1"/>
+          <rect x="114" y="176" width="36" height="28" rx="4" fill="rgba(0,181,163,0.08)" stroke="rgba(0,181,163,0.2)" stroke-width="1"/>
+          <rect x="156" y="176" width="36" height="28" rx="4" fill="rgba(0,181,163,0.1)" stroke="rgba(0,181,163,0.2)" stroke-width="1"/>
+          <circle cx="90" cy="190" r="5" stroke="rgba(0,181,163,0.5)" stroke-width="1" fill="none"/>
+          <circle cx="90" cy="190" r="2" fill="rgba(0,181,163,0.4)"/>
+          <circle cx="132" cy="190" r="5" stroke="rgba(0,181,163,0.4)" stroke-width="1" fill="none"/>
+          <circle cx="132" cy="190" r="2" fill="rgba(0,181,163,0.3)"/>
+          <circle cx="174" cy="190" r="5" stroke="rgba(0,181,163,0.45)" stroke-width="1" fill="none"/>
+          <circle cx="174" cy="190" r="2" fill="rgba(0,181,163,0.35)"/>
+          <!-- Timestamp / firma -->
+          <rect x="72" y="218" width="100" height="14" rx="4" fill="rgba(0,181,163,0.08)" stroke="rgba(0,181,163,0.2)" stroke-width="1"/>
+          <rect x="178" y="220" width="44" height="10" rx="3" fill="rgba(0,181,163,0.2)"/>
+
+          <!-- Right side: generated indicator -->
+          <g transform="translate(300,50)">
+            <circle cx="30" cy="30" r="30" fill="rgba(0,181,163,0.08)" stroke="rgba(0,181,163,0.18)" stroke-width="1.5"/>
+            <!-- Lightning / auto icon -->
+            <path d="M34 14l-8 16h7l-4 16 10-18h-7l4-14z" fill="rgba(0,181,163,0.5)" stroke="rgba(0,181,163,0.7)" stroke-width="0.5" stroke-linejoin="round"/>
+          </g>
+          <text x="330" y="100" font-family="sans-serif" font-size="8.5" fill="rgba(0,181,163,0.6)" text-anchor="middle" letter-spacing="0.8">GENERATO</text>
+          <text x="330" y="112" font-family="sans-serif" font-size="8.5" fill="rgba(0,181,163,0.6)" text-anchor="middle" letter-spacing="0.8">IN AUTOMATICO</text>
+
+          <!-- Timeline / history dots -->
+          <line x1="330" y1="128" x2="330" y2="210" stroke="rgba(0,181,163,0.2)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <circle cx="330" cy="140" r="5" fill="rgba(0,181,163,0.4)"/>
+          <circle cx="330" cy="162" r="5" fill="rgba(0,181,163,0.25)"/>
+          <circle cx="330" cy="184" r="5" fill="rgba(0,181,163,0.15)"/>
+          <circle cx="330" cy="206" r="5" fill="rgba(0,181,163,0.1)"/>
+          <rect x="341" y="137" width="42" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+          <rect x="341" y="159" width="34" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
+          <rect x="341" y="181" width="38" height="6" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="341" y="203" width="28" height="6" rx="3" fill="rgba(255,255,255,0.05)"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="video-placeholder">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="20" stroke="#00B5A3" stroke-width="1.5" stroke-opacity="0.3" fill="none"/>
+        <path d="M20 16l14 8-14 8V16z" fill="#00B5A3" fill-opacity="0.3"/>
+      </svg>
+      <p>Video dimostrativo — disponibile a breve</p>
+    </div>
+  </section>
+
+  <!-- TARGET -->
+  <section>
+    <div class="section-label">A chi serve</div>
+    <h2 class="section-title">Per chi interviene e per chi organizza gli interventi.</h2>
+    <p class="section-sub">ARyze serve chi è sul campo e chi deve garantire qualità, tempi e costi della manutenzione.</p>
+
+    <div class="target-grid">
+      <div class="target-card">
+        <svg class="target-icon" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="rgba(0,181,163,0.08)"/>
+          <circle cx="20" cy="20" r="6" stroke="#00B5A3" stroke-width="1.5" fill="none"/>
+          <path d="M20 10v4M20 26v4M10 20h4M26 20h4" stroke="#00B5A3" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="2" fill="#00B5A3"/>
+        </svg>
+        <h3>Aziende di manutenzione</h3>
+        <p>Ottimizzazione delle squadre, riduzione delle trasferte senior, qualità degli interventi documentata e verificabile.</p>
+      </div>
+
+      <div class="target-card">
+        <svg class="target-icon" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="rgba(0,181,163,0.08)"/>
+          <rect x="10" y="14" width="20" height="16" rx="2" stroke="#00B5A3" stroke-width="1.5" fill="none"/>
+          <path d="M15 14v-4M25 14v-4" stroke="#00B5A3" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M15 22h10M15 26h6" stroke="#00B5A3" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Facility manager</h3>
+        <p>Supervisione degli interventi, rispetto dei piani di manutenzione programmata, riduzione dei tempi di fermo non pianificati.</p>
+      </div>
+
+      <div class="target-card">
+        <svg class="target-icon" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="rgba(0,181,163,0.08)"/>
+          <rect x="12" y="10" width="16" height="20" rx="2" stroke="#00B5A3" stroke-width="1.5" fill="none"/>
+          <path d="M16 16h8M16 20h8M16 24h5" stroke="#00B5A3" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="28" cy="28" r="5" fill="#0F1F1E" stroke="#00B5A3" stroke-width="1.5"/>
+          <path d="M26 28l1.5 1.5L30 26" stroke="#00B5A3" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Produttori con rete di assistenza</h3>
+        <p>Supporta i tuoi tecnici di assistenza con accesso diretto alla documentazione di prodotto e connessione in diretta con i tuoi specialisti.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIANI -->
+  <section class="piani">
+    <div class="section-label">Piani</div>
+    <h2 class="section-title">Il modello giusto per la tua organizzazione.</h2>
+    <p class="section-sub">Dalla piccola squadra di manutenzione al produttore che supporta la propria rete di assistenza.</p>
+
+    <div class="piani-grid">
+      <div class="piano-card">
+        <div class="piano-name">Standard</div>
+        <h3>Manutenzione connessa</h3>
+        <ul class="piano-features">
+          <li>Accesso a manuali e schede tecniche</li>
+          <li>Sessioni remote con esperti</li>
+          <li>Verbali di intervento automatici</li>
+          <li>Fino a 5 utenti</li>
+          <li>Supporto via email</li>
+        </ul>
+        <a href="#demo" class="btn-outline">Contattaci</a>
+      </div>
+
+      <div class="piano-card featured">
+        <div class="piano-badge">Più scelto</div>
+        <div class="piano-name">Professional</div>
+        <h3>Manutenzione intelligente</h3>
+        <ul class="piano-features">
+          <li>Tutto di Standard, più:</li>
+          <li>Collegamento con CMMS e DMS</li>
+          <li>Analisi termiche e visive</li>
+          <li>KPI e reportistica avanzata</li>
+          <li>Fino a 20 utenti</li>
+          <li>Supporto prioritario</li>
+        </ul>
+        <a href="#demo" class="btn-outline">Contattaci</a>
+      </div>
+
+      <div class="piano-card">
+        <div class="piano-name">Enterprise</div>
+        <h3>White-label &amp; custom</h3>
+        <ul class="piano-features">
+          <li>Tutto di Professional, più:</li>
+          <li>Piattaforma brandizzata per i tuoi clienti</li>
+          <li>Integrazione con gestionali e ERP</li>
+          <li>API e connettori custom</li>
+          <li>Utenti illimitati</li>
+          <li>SLA dedicato e onboarding</li>
+        </ul>
+        <a href="#demo" class="btn-outline">Contattaci</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIBILITÀ -->
+  <section class="credibilita">
+    <div class="section-label">Chi c'è dietro ARyze</div>
+    <h2 class="section-title">Una joint venture nata dall'industria delle costruzioni.</h2>
+
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="co-name">Levery S.r.l. Società Benefit</div>
+        <p>Partner di R&amp;D per il settore costruzioni, specializzato in materiali bio-based, conformità digitale di prodotto e innovazione dell'involucro edilizio. Startup innovativa con sede nel territorio di Rimini.</p>
+      </div>
+      <div class="cred-card">
+        <div class="co-name">Exvirience S.r.l.</div>
+        <p>Specialisti in soluzioni Extended Reality (XR) per ambienti industriali e costruttivi. Esperienza nello sviluppo di applicazioni AR/VR per formazione, manutenzione e gestione operativa.</p>
+      </div>
+    </div>
+
+    <div class="eu-strip">
+      <span class="eu-flag">🇪🇺</span>
+      <p>This project was co-funded by the European Union's Single Market Programme. | Progetto co-finanziato dal Programma per il Mercato Unico dell'Unione Europea.</p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="demo">
+    <div class="form-wrap">
+      <div class="form-intro">
+        <div class="section-label">Richiedi una demo</div>
+        <h2>Scopri come <span>ARyze</span> ottimizza la tua manutenzione.</h2>
+        <p>Richiedi una demo gratuita calibrata sul tuo contesto operativo. Ti risponderemo entro 24 ore.</p>
+        <div class="form-promise">
+          <div class="promise-item"><span class="promise-dot"></span>Demo gratuita e senza impegno</div>
+          <div class="promise-item"><span class="promise-dot"></span>Risposta entro 24 ore lavorative</div>
+          <div class="promise-item"><span class="promise-dot"></span>Nessun venditore, solo tecnici</div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form action="https://formsubmit.co/info@aryze.it" method="POST">
+          <input type="hidden" name="_subject" value="[ARyze O&M] Nuova richiesta di demo" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://levery-srl.github.io/aryze-website/grazie.html" />
+          <input type="hidden" name="segmento" value="O&M" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nome *</label>
+              <input type="text" name="nome" placeholder="Mario" required />
+            </div>
+            <div class="form-group">
+              <label>Cognome *</label>
+              <input type="text" name="cognome" placeholder="Rossi" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Azienda *</label>
+              <input type="text" name="azienda" placeholder="Nome azienda" required />
+            </div>
+            <div class="form-group">
+              <label>Ruolo *</label>
+              <input type="text" name="ruolo" placeholder="es. Facility Manager" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="email" placeholder="mario.rossi@azienda.it" required />
+          </div>
+
+          <div class="form-group">
+            <label>Il tuo principale interesse</label>
+            <select name="interesse">
+              <option value="">Seleziona...</option>
+              <option>Accesso rapido a documentazione tecnica</option>
+              <option>Supporto remoto tra tecnici</option>
+              <option>Registro automatico degli interventi</option>
+              <option>Integrazione con il mio gestionale</option>
+              <option>Soluzione white-label per i miei clienti</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Messaggio</label>
+            <textarea name="messaggio" placeholder="Descrivici brevemente il tuo contesto o la tua esigenza..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Richiedi la tua demo gratuita</button>
+          <p class="form-privacy">Inviando questo modulo accetti la nostra <a href="privacy.html">Privacy Policy</a>. I tuoi dati non verranno ceduti a terzi.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="logo-scritta-small.png" alt="ARyze" />
+    <div class="footer-text">
+      &copy; 2025 ARyze &mdash; Levery S.r.l. + Exvirience S.r.l.<br>
+      <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="cookies.html">Cookie Policy</a>
+    </div>
+    <div class="footer-eu">
+      <span class="eu-badge">EU Co-funded</span>
+      <span>Single Market Programme</span>
+    </div>
+  </footer>
+
+</body>
+</html>
