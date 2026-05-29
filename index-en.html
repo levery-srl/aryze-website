@@ -341,25 +341,51 @@
       footer { padding: 32px 24px; flex-direction: column; text-align: center; }
     }
   
-    footer{background:#fff;padding:36px 48px;border-top:1px solid rgba(0,181,163,0.15);display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:24px;}
+    
     .footer-logo-wrap img{height:26px;display:block;margin-bottom:6px;}
-    .footer-copy{font-size:11px;color:#5A7270;}
-    .footer-center{text-align:center;}
-    .footer-jv{font-size:12px;color:#5A7270;margin-bottom:6px;line-height:1.6;}
+    
+    
+    
     .footer-jv a{color:#5A7270;text-decoration:none;transition:color .2s;}
     .footer-jv a:hover{color:#00B5A3;}
-    .footer-eu{font-size:11px;color:#8A9E9C;line-height:1.6;margin-bottom:8px;}
-    .footer-links{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;}
+    
+    
     .footer-links a{color:#5A7270;text-decoration:underline;}
     .footer-links span{color:#C0D0CF;}
-    .footer-partner-logos{display:flex;align-items:center;justify-content:flex-end;gap:16px;}
-    .partner-logo{height:28px;display:block;opacity:0.7;transition:opacity .2s;filter:invert(1);}
+    
+    
     .partner-logo:hover{opacity:1;}
-    .levery-logo{height:24px;}
-    .exvirience-logo{height:32px;}
+    
+    
     @media(max-width:768px){
       footer{grid-template-columns:1fr;text-align:center;padding:28px 24px;}
-      .footer-partner-logos{justify-content:center;}
+      
+    }
+  
+    /* ── FOOTER UNIFIED ── */
+    footer{background:#fff;padding:32px 48px;border-top:1px solid rgba(0,181,163,0.15);display:grid;grid-template-columns:180px 1fr 200px;align-items:center;gap:32px;}
+    .footer-col{}
+    .footer-brand{}
+    .footer-aryze-logo{height:28px;display:block;margin-bottom:8px;}
+    .footer-copy{font-size:11px;color:#5A7270;}
+    .footer-center{text-align:center;}
+    .footer-jv{font-size:12px;color:#5A7270;margin-bottom:6px;line-height:1.7;}
+    .footer-jv a{color:#5A7270;text-decoration:none;transition:color .2s;}
+    .footer-jv a:hover{color:#00B5A3;}
+    .footer-jv strong{font-weight:600;}
+    .footer-eu{font-size:11px;color:#96ADAB;line-height:1.65;margin-bottom:8px;}
+    .footer-links{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;}
+    .footer-links a{color:#5A7270;text-decoration:underline;}
+    .footer-links a:hover{color:#00B5A3;}
+    .footer-links span{color:#C5D5D3;}
+    .footer-logos{display:flex;align-items:center;justify-content:flex-end;gap:20px;}
+    .footer-partner-logo{display:block;transition:opacity .2s;}
+    .footer-partner-logo:hover{opacity:.8;}
+    .levery-footer{height:36px;filter:invert(1) brightness(0);}
+    .exvirience-footer{height:42px;filter:brightness(0);}
+    @media(max-width:900px){
+      footer{grid-template-columns:1fr;text-align:center;padding:28px 24px;gap:20px;}
+      .footer-logos{justify-content:center;}
     }
   </style>
 </head>
@@ -431,33 +457,34 @@
   </section>
 
   <!-- FOOTER -->
-    <footer>
-    <div class="footer-logo-wrap">
-      <img src="logo-scritta-small.png" alt="ARyze" />
-      <div class="footer-copy">&copy; 2026 ARyze</div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-col footer-brand">
+    <img src="logo-scritta-small.png" alt="ARyze" class="footer-aryze-logo" />
+    <div class="footer-copy">&copy; 2026 ARyze</div>
+  </div>
+  <div class="footer-col footer-center">
+    <div class="footer-jv">A joint venture
+      <a href="https://www.levery.it" target="_blank" rel="noopener"><strong>Levery S.r.l. Società Benefit</strong></a>
+      +
+      <a href="https://www.exvirience.com" target="_blank" rel="noopener"><strong>Exvirience S.r.l.</strong></a>
     </div>
-    <div class="footer-center">
-      <div class="footer-jv">A joint venture
-        <a href="https://www.levery.it" target="_blank" rel="noopener"><strong>Levery S.r.l. Società Benefit</strong></a>
-        +
-        <a href="https://www.exvirience.com" target="_blank" rel="noopener"><strong>Exvirience S.r.l.</strong></a>
-      </div>
-      <div class="footer-eu">This project was co-funded by the European Union's Single Market Programme.</div>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <span>&middot;</span>
-        <a href="cookies.html">Cookie Policy</a>
-      </div>
+    <div class="footer-eu">This project was co-funded by the European Union's Single Market Programme.</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <span>&middot;</span>
+      <a href="cookies.html">Cookie Policy</a>
     </div>
-    <div class="footer-partner-logos">
-      <a href="https://www.levery.it" target="_blank" rel="noopener">
-        <img src="levery-logo.svg" alt="Levery" class="partner-logo levery-logo" />
-      </a>
-      <a href="https://www.exvirience.com" target="_blank" rel="noopener">
-        <img src="exvirience-logo.svg" alt="Exvirience" class="partner-logo exvirience-logo" />
-      </a>
-    </div>
-  </footer>
+  </div>
+  <div class="footer-col footer-logos">
+    <a href="https://www.levery.it" target="_blank" rel="noopener">
+      <img src="levery-logo.svg" alt="Levery" class="footer-partner-logo levery-footer" />
+    </a>
+    <a href="https://www.exvirience.com" target="_blank" rel="noopener">
+      <img src="exvirience-logo.png" alt="Exvirience" class="footer-partner-logo exvirience-footer" />
+    </a>
+  </div>
+</footer>
 
 </body>
 </html>

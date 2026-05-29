@@ -32,13 +32,13 @@
     body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;font-feature-settings:'ss01' 0;}
 
     /* ── NAV (white) ── */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:#fff;border-bottom:1px solid rgba(0,181,163,0.15);box-shadow:0 1px 20px rgba(0,0,0,0.06);}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px 48px;background:#fff;border-bottom:1px solid rgba(0,181,163,0.15);box-shadow:0 1px 20px rgba(0,0,0,0.06);}
     .nav-logo img{height:32px;display:block;}
     .nav-segments{display:flex;gap:4px;background:rgba(0,181,163,0.08);border:1px solid rgba(0,181,163,0.2);border-radius:100px;padding:4px;}
     .nav-segments a{text-decoration:none;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:7px 18px;border-radius:100px;color:var(--muted);transition:all .2s;}
     .nav-segments a:hover{color:var(--ink);background:rgba(0,181,163,0.12);}
     .nav-segments a.active{background:var(--teal);color:#fff;}
-    .nav-right{display:flex;align-items:center;gap:16px;}
+    .nav-right{display:flex;align-items:center;gap:16px;justify-content:flex-end;}
     .lang-toggle{display:flex;gap:2px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;}
     .lang-toggle a{padding:4px 8px;border-radius:4px;text-decoration:none;color:var(--muted);transition:color .2s;}
     .lang-toggle a.active{color:var(--teal);}
@@ -141,60 +141,61 @@
     .form-privacy{font-size:11px;color:rgba(255,255,255,.25);line-height:1.6;margin-top:12px;text-align:center;}
     .form-privacy a{color:rgba(255,255,255,.38);}
 
-    /* ── FOOTER (white) ── */
-    footer{background:#fff;padding:36px 48px;border-top:1px solid rgba(0,181,163,.15);display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:20px;}
-    .footer-logo img{height:26px;display:block;margin-bottom:10px;}
-    .footer-copy{font-size:12px;color:var(--muted);line-height:1.6;}
-    .footer-copy a{color:var(--muted);text-decoration:underline;}
-    .footer-eu{font-size:11px;color:var(--muted);line-height:1.65;max-width:340px;}
-    .footer-nav{display:flex;flex-direction:column;gap:6px;}
-    .footer-nav a{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
-    .footer-nav a:hover{color:var(--teal);}
-
-    @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-    .hero-eyebrow{animation:fadeUp .5s ease both;}
-    .hero h1{animation:fadeUp .5s .08s ease both;}
-    .hero p{animation:fadeUp .5s .16s ease both;}
-    .hero-actions{animation:fadeUp .5s .22s ease both;}
-
-    @media(max-width:900px){
-      nav{padding:14px 20px;} .nav-segments{display:none;}
-      section{padding:56px 24px;}
-      .hero{padding:90px 24px 56px;}
-      .pain-grid,.target-grid,.piani-grid,.cred-grid{grid-template-columns:1fr;}
-      .form-wrap{grid-template-columns:1fr;gap:36px;}
-      .form-row{grid-template-columns:1fr;}
-      footer{padding:28px 24px;flex-direction:column;}
-    }
-  
-    .cred-logo-link{display:block;margin-bottom:14px;}
-    .cred-logo{height:28px;filter:invert(1);opacity:0.7;}
-    .exvirience-cred{height:36px;}
-    .cred-card .co-name a{color:var(--teal);text-decoration:none;}
-    .cred-card .co-name a:hover{text-decoration:underline;}
-  
     /* ── FOOTER (white, unified) ── */
-    footer{background:#fff;padding:36px 48px;border-top:1px solid rgba(0,181,163,0.15);display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:24px;}
+    
     .footer-logo img{height:26px;display:block;margin-bottom:6px;}
-    .footer-copy{font-size:11px;color:#5A7270;}
-    .footer-center{text-align:center;}
-    .footer-jv{font-size:12px;color:#5A7270;margin-bottom:6px;line-height:1.6;}
+    
+    
+    
     .footer-jv a{color:#5A7270;text-decoration:none;transition:color .2s;}
     .footer-jv a:hover{color:var(--teal);}
-    .footer-eu{font-size:11px;color:#8A9E9C;line-height:1.6;margin-bottom:8px;}
-    .footer-links{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;}
+    
+    
     .footer-links a{color:#5A7270;text-decoration:underline;}
     .footer-links span{color:#C0D0CF;}
-    .footer-partner-logos{display:flex;align-items:center;justify-content:flex-end;gap:16px;}
-    .partner-logo{height:28px;display:block;opacity:0.75;transition:opacity .2s;filter:invert(1);}
+    
+    
     .partner-logo:hover{opacity:1;}
-    .levery-logo{height:24px;}
-    .exvirience-logo{height:32px;}
+    
+    
     @media(max-width:900px){
       footer{grid-template-columns:1fr;text-align:center;padding:28px 24px;}
-      .footer-partner-logos{justify-content:center;}
-      .footer-center{order:-1;}
+      
+      
     }
+  
+    /* ── FOOTER UNIFIED ── */
+    footer{background:#fff;padding:32px 48px;border-top:1px solid rgba(0,181,163,0.15);display:grid;grid-template-columns:180px 1fr 200px;align-items:center;gap:32px;}
+    .footer-col{}
+    .footer-brand{}
+    .footer-aryze-logo{height:28px;display:block;margin-bottom:8px;}
+    .footer-copy{font-size:11px;color:#5A7270;}
+    .footer-center{text-align:center;}
+    .footer-jv{font-size:12px;color:#5A7270;margin-bottom:6px;line-height:1.7;}
+    .footer-jv a{color:#5A7270;text-decoration:none;transition:color .2s;}
+    .footer-jv a:hover{color:#00B5A3;}
+    .footer-jv strong{font-weight:600;}
+    .footer-eu{font-size:11px;color:#96ADAB;line-height:1.65;margin-bottom:8px;}
+    .footer-links{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;}
+    .footer-links a{color:#5A7270;text-decoration:underline;}
+    .footer-links a:hover{color:#00B5A3;}
+    .footer-links span{color:#C5D5D3;}
+    .footer-logos{display:flex;align-items:center;justify-content:flex-end;gap:20px;}
+    .footer-partner-logo{display:block;transition:opacity .2s;}
+    .footer-partner-logo:hover{opacity:.8;}
+    .levery-footer{height:36px;filter:invert(1) brightness(0);}
+    .exvirience-footer{height:42px;filter:brightness(0);}
+    @media(max-width:900px){
+      footer{grid-template-columns:1fr;text-align:center;padding:28px 24px;gap:20px;}
+      .footer-logos{justify-content:center;}
+    }
+    .cred-logo-wrap{margin-bottom:20px;}
+    .cred-logo{display:block;transition:opacity .2s;}
+    .cred-logo:hover{opacity:.85;}
+    .levery-cred{height:44px;filter:invert(1);}
+    .exvirience-cred{height:54px;filter:invert(0) brightness(2);}
+    .cred-card .co-name a{color:var(--teal);text-decoration:none;}
+    .cred-card .co-name a:hover{text-decoration:underline;}
   </style>
 </head>
 <body>
@@ -445,21 +446,25 @@
     <h2 class="section-title">A joint venture born from the construction industry.</h2>
     <div class="cred-grid">
       <div class="cred-card">
-        <a href="https://www.levery.it" target="_blank" rel="noopener" class="cred-logo-link">
-          <img src="levery-logo.svg" alt="Levery" class="cred-logo" />
-        </a>
+        <div class="cred-logo-wrap">
+          <a href="https://www.levery.it" target="_blank" rel="noopener">
+            <img src="levery-logo.svg" alt="Levery" class="cred-logo levery-cred" />
+          </a>
+        </div>
         <div class="co-name"><a href="https://www.levery.it" target="_blank" rel="noopener">Levery S.r.l. Società Benefit</a></div>
         <p>R&amp;D partner for the construction sector, specialised in bio-based materials, digital product compliance and building envelope innovation. Innovative startup based in the Rimini area.</p>
       </div>
       <div class="cred-card">
-        <a href="https://www.exvirience.com" target="_blank" rel="noopener" class="cred-logo-link">
-          <img src="exvirience-logo.svg" alt="Exvirience" class="cred-logo exvirience-cred" />
-        </a>
+        <div class="cred-logo-wrap">
+          <a href="https://www.exvirience.com" target="_blank" rel="noopener">
+            <img src="exvirience-logo.png" alt="Exvirience" class="cred-logo exvirience-cred" />
+          </a>
+        </div>
         <div class="co-name"><a href="https://www.exvirience.com" target="_blank" rel="noopener">Exvirience S.r.l.</a></div>
         <p>Specialists in Extended Reality (XR) solutions for industrial and construction environments. Proven track record in AR/VR applications for training, maintenance and operational management.</p>
       </div>
     </div>
-  </div>
+    </div>
 </section>
 
 <!-- FORM -->
@@ -511,12 +516,13 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">
-    <img src="logo-scritta-small.png" alt="ARyze" />
+  <div class="footer-col footer-brand">
+    <img src="logo-scritta-small.png" alt="ARyze" class="footer-aryze-logo" />
     <div class="footer-copy">&copy; 2026 ARyze</div>
   </div>
-  <div class="footer-center">
+  <div class="footer-col footer-center">
     <div class="footer-jv">A joint venture
       <a href="https://www.levery.it" target="_blank" rel="noopener"><strong>Levery S.r.l. Società Benefit</strong></a>
       +
@@ -529,12 +535,12 @@
       <a href="cookies.html">Cookie Policy</a>
     </div>
   </div>
-  <div class="footer-partner-logos">
+  <div class="footer-col footer-logos">
     <a href="https://www.levery.it" target="_blank" rel="noopener">
-      <img src="levery-logo.svg" alt="Levery" class="partner-logo levery-logo" />
+      <img src="levery-logo.svg" alt="Levery" class="footer-partner-logo levery-footer" />
     </a>
     <a href="https://www.exvirience.com" target="_blank" rel="noopener">
-      <img src="exvirience-logo.svg" alt="Exvirience" class="partner-logo exvirience-logo" />
+      <img src="exvirience-logo.png" alt="Exvirience" class="footer-partner-logo exvirience-footer" />
     </a>
   </div>
 </footer>
