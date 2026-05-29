@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARyze — See what you need. Do what matters.</title>
-  <meta name="description" content="ARyze shows you the right information, where you need it, while you work — on a construction site or during building maintenance. Hands free, without stopping work." />
-  <meta property="og:title" content="ARyze — See what you need. Do what matters." />
-  <meta property="og:description" content="ARyze ti mostra le informazioni giuste, dove ti serve, mentre sei al lavoro — in cantiere o durante la manutenzione di un edificio." />
+  <title>ARyze, See what you need. Do what matters.</title>
+  <meta name="description" content="ARyze shows you the right information, where you need it, while you work, on a construction site or during building maintenance.<br>Hands free, without stopping work." />
+  <meta property="og:title" content="ARyze, See what you need. Do what matters." />
+  <meta property="og:description" content="ARyze ti mostra le informazioni giuste, dove ti serve, mentre sei al lavoro, in cantiere o durante la manutenzione di un edificio." />
   <meta property="og:image" content="XR-04.jpg" />
   <link rel="icon" type="image/png" href="logo.jpg" />
 
@@ -340,6 +340,27 @@
       .segment-cards { grid-template-columns: 1fr; gap: 16px; }
       footer { padding: 32px 24px; flex-direction: column; text-align: center; }
     }
+  
+    footer{background:#fff;padding:36px 48px;border-top:1px solid rgba(0,181,163,0.15);display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:24px;}
+    .footer-logo-wrap img{height:26px;display:block;margin-bottom:6px;}
+    .footer-copy{font-size:11px;color:#5A7270;}
+    .footer-center{text-align:center;}
+    .footer-jv{font-size:12px;color:#5A7270;margin-bottom:6px;line-height:1.6;}
+    .footer-jv a{color:#5A7270;text-decoration:none;transition:color .2s;}
+    .footer-jv a:hover{color:#00B5A3;}
+    .footer-eu{font-size:11px;color:#8A9E9C;line-height:1.6;margin-bottom:8px;}
+    .footer-links{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;}
+    .footer-links a{color:#5A7270;text-decoration:underline;}
+    .footer-links span{color:#C0D0CF;}
+    .footer-partner-logos{display:flex;align-items:center;justify-content:flex-end;gap:16px;}
+    .partner-logo{height:28px;display:block;opacity:0.7;transition:opacity .2s;filter:invert(1);}
+    .partner-logo:hover{opacity:1;}
+    .levery-logo{height:24px;}
+    .exvirience-logo{height:32px;}
+    @media(max-width:768px){
+      footer{grid-template-columns:1fr;text-align:center;padding:28px 24px;}
+      .footer-partner-logos{justify-content:center;}
+    }
   </style>
 </head>
 <body>
@@ -369,7 +390,7 @@
     <div class="hero-content">
       <span class="hero-eyebrow">Built environment &amp; XR</span>
       <h1>See what you need.<br><span>Do what matters.</span></h1>
-      <p>ARyze shows you the right information, where you need it, while you work — on a construction site or during building maintenance. Hands free, without stopping work.</p>
+      <p>ARyze shows you the right information, where you need it, while you work, on a construction site or during building maintenance.<br>Hands free, without stopping work.</p>
     </div>
 
     <div class="segment-cards">
@@ -410,14 +431,31 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <img src="logo-scritta-small.png" alt="ARyze" />
-    <div class="footer-text">
-      &copy; 2026 ARyze &mdash; A joint venture <strong>Levery S.r.l.</strong> + <strong>Exvirience S.r.l.</strong><br>
-      <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="cookies.html">Cookie Policy</a>
+    <footer>
+    <div class="footer-logo-wrap">
+      <img src="logo-scritta-small.png" alt="ARyze" />
+      <div class="footer-copy">&copy; 2026 ARyze</div>
     </div>
-    <div class="footer-eu">
-      <span style="font-size:11px;color:#5A7270;max-width:300px;line-height:1.6;">This project was co-funded by the European Union's Single Market Programme.</span>
+    <div class="footer-center">
+      <div class="footer-jv">A joint venture
+        <a href="https://www.levery.it" target="_blank" rel="noopener"><strong>Levery S.r.l. Società Benefit</strong></a>
+        +
+        <a href="https://www.exvirience.com" target="_blank" rel="noopener"><strong>Exvirience S.r.l.</strong></a>
+      </div>
+      <div class="footer-eu">This project was co-funded by the European Union's Single Market Programme.</div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span>&middot;</span>
+        <a href="cookies.html">Cookie Policy</a>
+      </div>
+    </div>
+    <div class="footer-partner-logos">
+      <a href="https://www.levery.it" target="_blank" rel="noopener">
+        <img src="levery-logo.svg" alt="Levery" class="partner-logo levery-logo" />
+      </a>
+      <a href="https://www.exvirience.com" target="_blank" rel="noopener">
+        <img src="exvirience-logo.svg" alt="Exvirience" class="partner-logo exvirience-logo" />
+      </a>
     </div>
   </footer>
 

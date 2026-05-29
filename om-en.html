@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARyze O&M — You know what you need. ARyze finds it, right where you are.</title>
+  <title>ARyze O&M, You know what you need. ARyze finds it, right where you are.</title>
   <meta name="description" content="Manuals, technical sheets, maintenance history: all accessible at the asset in front of you. Connect experts in real time, no travel needed." />
   <link rel="icon" type="image/png" href="logo.jpg" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KMV018LXB"></script>
@@ -28,8 +28,8 @@
       --surface-dark: rgba(255,255,255,0.04);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
-    body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;}
+    html{scroll-behavior:smooth;scroll-padding-top:72px;}
+    body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;font-feature-settings:'ss01' 0;}
 
     /* ── NAV (white) ── */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:#fff;border-bottom:1px solid rgba(0,181,163,0.15);box-shadow:0 1px 20px rgba(0,0,0,0.06);}
@@ -74,7 +74,7 @@
     .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
     .pain-card{background:var(--surface-dark);border:1px solid var(--border-dark);border-radius:14px;padding:28px 24px;transition:border-color .25s;}
     .pain-card:hover{border-color:rgba(0,181,163,.4);}
-    .pain-icon{width:40px;height:40px;margin-bottom:16px;}
+    .pain-icon{width:52px;height:52px;margin-bottom:20px;}
     .pain-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:10px;line-height:1.3;}
     .pain-card p{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.52);}
 
@@ -85,7 +85,7 @@
     .feature-item:last-child{border-bottom:none;}
     .feature-num-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:4px;}
     .feature-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.1em;}
-    .feature-icon-sm{width:36px;height:36px;}
+    .feature-icon-sm{width:52px;height:52px;}
     .feature-body h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px;line-height:1.25;}
     .feature-body p{font-size:14px;font-weight:300;line-height:1.75;color:rgba(255,255,255,.6);max-width:600px;}
 
@@ -94,7 +94,7 @@
     .target-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
     .target-card{border:1px solid var(--border-dark);border-radius:14px;padding:28px 24px;transition:all .25s;}
     .target-card:hover{background:var(--surface-dark);border-color:var(--teal);}
-    .target-icon{width:36px;height:36px;margin-bottom:16px;}
+    .target-icon{width:48px;height:48px;margin-bottom:18px;}
     .target-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;}
     .target-card p{font-size:13px;font-weight:300;line-height:1.65;color:rgba(255,255,255,.5);}
 
@@ -166,6 +166,35 @@
       .form-row{grid-template-columns:1fr;}
       footer{padding:28px 24px;flex-direction:column;}
     }
+  
+    .cred-logo-link{display:block;margin-bottom:14px;}
+    .cred-logo{height:28px;filter:invert(1);opacity:0.7;}
+    .exvirience-cred{height:36px;}
+    .cred-card .co-name a{color:var(--teal);text-decoration:none;}
+    .cred-card .co-name a:hover{text-decoration:underline;}
+  
+    /* ── FOOTER (white, unified) ── */
+    footer{background:#fff;padding:36px 48px;border-top:1px solid rgba(0,181,163,0.15);display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:24px;}
+    .footer-logo img{height:26px;display:block;margin-bottom:6px;}
+    .footer-copy{font-size:11px;color:#5A7270;}
+    .footer-center{text-align:center;}
+    .footer-jv{font-size:12px;color:#5A7270;margin-bottom:6px;line-height:1.6;}
+    .footer-jv a{color:#5A7270;text-decoration:none;transition:color .2s;}
+    .footer-jv a:hover{color:var(--teal);}
+    .footer-eu{font-size:11px;color:#8A9E9C;line-height:1.6;margin-bottom:8px;}
+    .footer-links{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;}
+    .footer-links a{color:#5A7270;text-decoration:underline;}
+    .footer-links span{color:#C0D0CF;}
+    .footer-partner-logos{display:flex;align-items:center;justify-content:flex-end;gap:16px;}
+    .partner-logo{height:28px;display:block;opacity:0.75;transition:opacity .2s;filter:invert(1);}
+    .partner-logo:hover{opacity:1;}
+    .levery-logo{height:24px;}
+    .exvirience-logo{height:32px;}
+    @media(max-width:900px){
+      footer{grid-template-columns:1fr;text-align:center;padding:28px 24px;}
+      .footer-partner-logos{justify-content:center;}
+      .footer-center{order:-1;}
+    }
   </style>
 </head>
 <body>
@@ -192,7 +221,7 @@
   <div class="hero-content">
     <div class="hero-eyebrow">ARyze for O&amp;M</div>
     <h1>You know what you need.<br><em>ARyze finds it,</em> right where you are.</h1>
-    <p>Manuals, technical sheets, maintenance history: all accessible at the asset in front of you, right when you need it. If you need an expert, connect them live — no travel, no waiting.</p>
+    <p>Manuals, technical sheets, maintenance history: all accessible at the asset in front of you, right when you need it. If you need an expert, connect them live, no travel, no waiting.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="#demo">Request a free demo</a>
       <a class="btn-ghost" href="#soluzione">See how it works</a>
@@ -416,11 +445,17 @@
     <h2 class="section-title">A joint venture born from the construction industry.</h2>
     <div class="cred-grid">
       <div class="cred-card">
-        <div class="co-name">Levery S.r.l. Società Benefit</div>
+        <a href="https://www.levery.it" target="_blank" rel="noopener" class="cred-logo-link">
+          <img src="levery-logo.svg" alt="Levery" class="cred-logo" />
+        </a>
+        <div class="co-name"><a href="https://www.levery.it" target="_blank" rel="noopener">Levery S.r.l. Società Benefit</a></div>
         <p>R&amp;D partner for the construction sector, specialised in bio-based materials, digital product compliance and building envelope innovation. Innovative startup based in the Rimini area.</p>
       </div>
       <div class="cred-card">
-        <div class="co-name">Exvirience S.r.l.</div>
+        <a href="https://www.exvirience.com" target="_blank" rel="noopener" class="cred-logo-link">
+          <img src="exvirience-logo.svg" alt="Exvirience" class="cred-logo exvirience-cred" />
+        </a>
+        <div class="co-name"><a href="https://www.exvirience.com" target="_blank" rel="noopener">Exvirience S.r.l.</a></div>
         <p>Specialists in Extended Reality (XR) solutions for industrial and construction environments. Proven track record in AR/VR applications for training, maintenance and operational management.</p>
       </div>
     </div>
@@ -476,20 +511,31 @@
   </div>
 </section>
 
-<!-- FOOTER (white) -->
 <footer>
   <div class="footer-logo">
     <img src="logo-scritta-small.png" alt="ARyze" />
-    <div class="footer-copy">&copy; 2026 ARyze &mdash; Levery S.r.l. + Exvirience S.r.l.</div>
+    <div class="footer-copy">&copy; 2026 ARyze</div>
   </div>
-  <div class="footer-eu">
-    This project was co-funded by the European Union's Single Market Programme.
+  <div class="footer-center">
+    <div class="footer-jv">A joint venture
+      <a href="https://www.levery.it" target="_blank" rel="noopener"><strong>Levery S.r.l. Società Benefit</strong></a>
+      +
+      <a href="https://www.exvirience.com" target="_blank" rel="noopener"><strong>Exvirience S.r.l.</strong></a>
+    </div>
+    <div class="footer-eu">This project was co-funded by the European Union's Single Market Programme.</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <span>&middot;</span>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
   </div>
-  <div class="footer-nav">
-    <a href="cantiere-en.html">Construction</a>
-    <a href="om-en.html">O&amp;M</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="cookies.html">Cookie Policy</a>
+  <div class="footer-partner-logos">
+    <a href="https://www.levery.it" target="_blank" rel="noopener">
+      <img src="levery-logo.svg" alt="Levery" class="partner-logo levery-logo" />
+    </a>
+    <a href="https://www.exvirience.com" target="_blank" rel="noopener">
+      <img src="exvirience-logo.svg" alt="Exvirience" class="partner-logo exvirience-logo" />
+    </a>
   </div>
 </footer>
 
