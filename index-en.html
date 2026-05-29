@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARyze — Vedi quello che serve. Fai quello che conta.</title>
-  <meta name="description" content="ARyze ti mostra le informazioni giuste, dove ti serve, mentre sei al lavoro — in cantiere o durante la manutenzione di un edificio. A mani libere, senza fermare i lavori." />
-  <meta property="og:title" content="ARyze — Vedi quello che serve. Fai quello che conta." />
-  <meta property="og:description" content="ARyze ti mostra le informazioni giuste, dove ti serve, mentre sei al lavoro — in cantiere o durante la manutenzione di un edificio." />
+  <title>ARyze, See what you need. Do what matters.</title>
+  <meta name="description" content="ARyze shows you the right information, where you need it, while you work, on a construction site or during building maintenance.<br>Hands free, without stopping work." />
+  <meta property="og:title" content="ARyze, See what you need. Do what matters." />
+  <meta property="og:description" content="ARyze ti mostra le informazioni giuste, dove ti serve, mentre sei al lavoro, in cantiere o durante la manutenzione di un edificio." />
   <meta property="og:image" content="XR-04.jpg" />
   <link rel="icon" type="image/png" href="logo.jpg" />
 
@@ -49,25 +49,70 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV (white) ── */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px 48px;background:#fff;border-bottom:1px solid rgba(0,181,163,0.15);box-shadow:0 1px 20px rgba(0,0,0,0.06);}
-    .nav-logo img{height:32px;display:block;}
-    .nav-segments{display:flex;gap:4px;background:rgba(0,181,163,0.08);border:1px solid rgba(0,181,163,0.2);border-radius:100px;padding:4px;}
-    .nav-segments a{text-decoration:none;font-family:'Clash Display',sans-serif;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:7px 18px;border-radius:100px;color:var(--muted);transition:all .2s;}
-    .nav-segments a:hover{color:var(--ink);background:rgba(0,181,163,0.12);}
-    .nav-segments a.active{background:var(--teal);color:#fff;}
-    .nav-right{display:flex;align-items:center;gap:16px;justify-content:flex-end;}
-    .lang-toggle{display:flex;gap:2px;font-family:'Clash Display',sans-serif;font-size:12px;font-weight:700;}
-    .lang-toggle a{padding:4px 8px;border-radius:4px;text-decoration:none;color:var(--muted);transition:color .2s;}
-    .lang-toggle a.active{color:var(--teal);}
-    .lang-toggle a:hover{color:var(--ink);}
-    .nav-cta{font-family:'Clash Display',sans-serif;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:9px 22px;background:var(--teal);color:#fff;border-radius:100px;text-decoration:none;transition:all .2s;}
-    .nav-cta:hover{background:var(--teal-dark);}
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 16px 48px;
+      background: #fff;
+      border-bottom: 1px solid rgba(0,181,163,0.15);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+    }
 
-    
+    .nav-logo img { height: 36px; display: block; }
+
+    .nav-segments {
+      display: flex;
+      gap: 4px;
+      background: rgba(0,181,163,0.1);
+      border: 1px solid rgba(0,181,163,0.25);
+      border-radius: 100px;
+      padding: 4px;
+    }
+
+    .nav-segments a {
+      text-decoration: none;
+      font-family: 'Clash Display', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+      color: #5A7270;
+      transition: all 0.25s ease;
+    }
+
+    .nav-segments a:hover {
+      color: var(--white);
+      background: rgba(0,181,163,0.2);
+    }
+
+    .nav-segments a.active {
+      background: var(--teal);
+      color: var(--ink);
+    }
+
+    .nav-cta {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      background: var(--teal);
+      color: var(--ink);
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-cta { color: #fff !important; } .nav-cta:hover { background: var(--teal-dark); }
 
     /* ── HERO ── */
-/* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -130,12 +175,13 @@
     .hero h1 span { color: var(--teal); }
 
     .hero p {
-      font-size: clamp(16px, 1.6vw, 20px);
+      font-size: clamp(15px, 1.4vw, 18px);
       font-weight: 300;
       line-height: 1.7;
       color: rgba(255,255,255,0.72);
-      max-width: 620px;
+      max-width: 560px;
       margin: 0 auto 56px;
+      text-align: center;
     }
 
     /* ── SEGMENT CARDS ── */
@@ -216,6 +262,107 @@
     .seg-link svg { transition: transform 0.2s ease; }
     .seg-card:hover .seg-link svg { transform: translateX(4px); }
 
+    /* ── FOOTER ── */
+    footer {
+      padding: 36px 48px;
+      border-top: 1px solid rgba(0,181,163,0.15);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer img { height: 28px; opacity: 0.7; }
+
+    .footer-text {
+      font-size: 12px;
+      color: #5A7270;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .footer-text a { color: #5A7270; text-decoration: underline; }
+
+    .footer-eu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: #5A7270;
+    }
+
+    .eu-badge {
+      background: rgba(0,181,163,0.1);
+      border: 1px solid rgba(0,181,163,0.2);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+    .hero h1      { animation: fadeUp 0.6s 0.1s ease both; }
+    .hero p       { animation: fadeUp 0.6s 0.2s ease both; }
+    .segment-cards{ animation: fadeUp 0.6s 0.35s ease both; }
+
+    /* ── LANG TOGGLE ── */
+    .lang-toggle {
+      display: flex;
+      gap: 2px;
+      font-family: 'Clash Display', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .lang-toggle a {
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.2s;
+    }
+    .lang-toggle a.active { color: var(--teal); } .lang-toggle a { color: #5A7270; }
+    .lang-toggle a:hover  { color: var(--white); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-segments { display: none; }
+      .hero { padding: 100px 24px 60px; }
+      .segment-cards { grid-template-columns: 1fr; gap: 16px; }
+      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    }
+  
+    
+    .footer-logo-wrap img{height:26px;display:block;margin-bottom:6px;}
+    
+    
+    
+    .footer-jv a{color:#5A7270;text-decoration:none;transition:color .2s;}
+    .footer-jv a:hover{color:#00B5A3;}
+    
+    
+    .footer-links a{color:#5A7270;text-decoration:underline;}
+    .footer-links span{color:#C0D0CF;}
+    
+    
+    .partner-logo:hover{opacity:1;}
+    
+    
+    @media(max-width:768px){
+      footer{grid-template-columns:1fr;text-align:center;padding:28px 24px;}
+      
+    }
+  
     /* ── FOOTER UNIFIED ── */
     footer{background:#fff;padding:32px 48px;border-top:1px solid rgba(0,181,163,0.15);display:grid;grid-template-columns:180px 1fr 200px;align-items:center;gap:32px;}
     .footer-col{}
@@ -236,378 +383,10 @@
     .footer-partner-logo{display:block;transition:opacity .2s;}
     .footer-partner-logo:hover{opacity:.8;}
     .levery-footer{height:32px;filter:brightness(0);}
-    .exvirience-footer{height:40px;filter:none;}
+    .exvirience-footer{height:40px;}
     @media(max-width:900px){
       footer{grid-template-columns:1fr;text-align:center;padding:28px 24px;gap:20px;}
       .footer-logos{justify-content:center;}
-    }
-    .cred-logo-wrap{margin-bottom:20px;}
-    .cred-logo{display:block;transition:opacity .2s;}
-    .cred-logo:hover{opacity:.85;}
-    .levery-cred{height:88px;filter:none;}
-    .exvirience-cred{height:56px;filter:invert(1);}
-    .cred-card .co-name a{color:var(--teal);text-decoration:none;}
-    .cred-card .co-name a:hover{text-decoration:underline;}
-  </style>
-</head>
-<body>
-
-<nav>
-  <a class="nav-logo" href="index-it.html"><img src="logo-scritta-small.png" alt="ARyze" /></a>
-  <div class="nav-segments">
-    <a href="cantiere.html" class="active">Cantiere</a>
-    <a href="om-en.html">O&amp;M</a>
-  </div>
-  <div class="nav-right">
-    <div class="lang-toggle">
-      <a href="cantiere.html" class="active">IT</a>
-      <span style="color:rgba(0,0,0,.2)">|</span>
-      <a href="cantiere-en.html">EN</a>
-    </div>
-    <a class="nav-cta" href="#demo">Richiedi demo</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">ARyze per il Cantiere</div>
-    <h1>Il cantiere <em>davanti agli occhi.</em><br>Le mani libere di lavorare.</h1>
-    <p>Documenti, verifiche, istruzioni operative: ARyze te li mostra dove sei e quando servono, senza cercare nulla. E quando hai bisogno di un esperto, lo colleghi in tempo reale, lui vede quello che vedi tu.</p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="#demo">Richiedi una demo gratuita</a>
-      <a class="btn-ghost" href="#soluzione">Scopri come funziona</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEMA -->
-<section class="problema">
-  <div class="inner">
-    <div class="section-label">Il problema</div>
-    <h2 class="section-title">In cantiere il tempo è denaro. Cercarlo è il problema.</h2>
-    <p class="section-sub">Ogni ora persa a cercare un documento, aspettare una risposta o ricostruire un'attività è un costo diretto.</p>
-    <div class="pain-grid">
-
-      <div class="pain-card">
-        <svg class="pain-icon" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="10" fill="rgba(0,181,163,0.08)"/>
-          <path d="M12 10h16v20H12z" stroke="#00B5A3" stroke-width="1.4" stroke-linejoin="round" fill="none"/>
-          <path d="M16 16h8M16 20h8M16 24h5" stroke="#00B5A3" stroke-width="1.4" stroke-linecap="round"/>
-          <line x1="25" y1="25" x2="30" y2="30" stroke="rgba(255,80,80,.7)" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="30" y1="25" x2="25" y2="30" stroke="rgba(255,80,80,.7)" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-        <h3>Documenti che non si trovano</h3>
-        <p>Tavole aggiornate, schede tecniche, varianti di progetto: ognuno ha una versione, nessuno ha quella giusta. Il lavoro si ferma mentre si cerca.</p>
-      </div>
-
-      <div class="pain-card">
-        <svg class="pain-icon" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="10" fill="rgba(0,181,163,0.08)"/>
-          <circle cx="15" cy="19" r="5" stroke="#00B5A3" stroke-width="1.4" fill="none"/>
-          <circle cx="26" cy="19" r="5" stroke="#00B5A3" stroke-width="1.4" fill="none"/>
-          <path d="M10 30c0-3.5 2-5 5-5M21 30c0-3.5 2-5 5-5" stroke="#00B5A3" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M20 19h-2" stroke="rgba(0,181,163,.3)" stroke-width="1.4"/>
-        </svg>
-        <h3>Supporto che arriva tardi</h3>
-        <p>Quando serve una risposta, si chiama, si aspetta, si manda una foto su WhatsApp. Nel frattempo la squadra è ferma e il cantiere accumula ritardo.</p>
-      </div>
-
-      <div class="pain-card">
-        <svg class="pain-icon" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="10" fill="rgba(0,181,163,0.08)"/>
-          <path d="M10 28l5-9 4 5 4-7 5 11" stroke="#00B5A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M10 13h7M10 17h5" stroke="rgba(0,181,163,.35)" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2 2"/>
-        </svg>
-        <h3>Interventi non tracciati</h3>
-        <p>Cosa è stato verificato, da chi, con quale esito: spesso non documentato, o compilato a fine giornata quando i dettagli si perdono.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SOLUZIONE -->
-<section class="soluzione" id="soluzione">
-  <div class="inner">
-    <div class="section-label">La soluzione</div>
-    <h2 class="section-title">ARyze connette il cantiere fisico con le informazioni digitali, in tempo reale.</h2>
-    <p class="section-sub">Tre funzionalità core che eliminano i tre problemi principali del cantiere moderno.</p>
-
-    <div class="feature-list">
-
-      <div class="feature-item">
-        <div class="feature-num-wrap">
-          <span class="feature-num">01</span>
-          <svg class="feature-icon-sm" viewBox="0 0 36 36" fill="none">
-            <rect width="36" height="36" rx="9" fill="rgba(0,181,163,0.1)"/>
-            <path d="M10 9h16v18H10z" stroke="#00B5A3" stroke-width="1.4" stroke-linejoin="round" fill="none"/>
-            <path d="M13 14h10M13 17h10M13 20h7" stroke="#00B5A3" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="25" cy="25" r="4" fill="rgba(13,31,29,1)" stroke="#00B5A3" stroke-width="1.2"/>
-            <path d="M23.5 25l1 1 2-2" stroke="#00B5A3" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="feature-body">
-          <h3>Accesso immediato alla documentazione di progetto</h3>
-          <p>Inquadra l'elemento o cerca per voce. Tavole, schede tecniche, specifiche, nella versione aggiornata, senza aprire cartelle o chiamare l'ufficio.</p>
-        </div>
-      </div>
-
-      <div class="feature-item">
-        <div class="feature-num-wrap">
-          <span class="feature-num">02</span>
-          <svg class="feature-icon-sm" viewBox="0 0 36 36" fill="none">
-            <rect width="36" height="36" rx="9" fill="rgba(0,181,163,0.1)"/>
-            <circle cx="13" cy="17" r="4" stroke="#00B5A3" stroke-width="1.4" fill="none"/>
-            <circle cx="24" cy="17" r="4" stroke="#00B5A3" stroke-width="1.4" fill="none"/>
-            <path d="M18 17h1" stroke="#00B5A3" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M9 27c0-2.5 1.5-4 4-4M23 27c0-2.5 1.5-4 4-4" stroke="#00B5A3" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="feature-body">
-          <h3>Collegamento remoto con esperti</h3>
-          <p>Apri una sessione live con il progettista, il direttore lavori o il fornitore. Vede esattamente quello che vedi tu. Decide con te, in tempo reale, senza spostarsi.</p>
-        </div>
-      </div>
-
-      <div class="feature-item">
-        <div class="feature-num-wrap">
-          <span class="feature-num">03</span>
-          <svg class="feature-icon-sm" viewBox="0 0 36 36" fill="none">
-            <rect width="36" height="36" rx="9" fill="rgba(0,181,163,0.1)"/>
-            <path d="M9 8h18v20H9z" stroke="#00B5A3" stroke-width="1.4" stroke-linejoin="round" fill="none"/>
-            <rect x="12" y="13" width="8" height="8" rx="1" stroke="#00B5A3" stroke-width="1.2" fill="none"/>
-            <path d="M13.5 17l1.5 1.5 3-3" stroke="#00B5A3" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M22 14h2M22 17h2M22 20h2" stroke="#00B5A3" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="feature-body">
-          <h3>Documentazione automatica dell'avanzamento</h3>
-          <p>Foto, note, verifiche completate: ARyze li struttura in un report pronto da condividere. Nessuna compilazione manuale a fine giornata.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- TARGET -->
-<section class="target">
-  <div class="inner">
-    <div class="section-label">A chi serve</div>
-    <h2 class="section-title">Per chi lavora sul campo e per chi lo coordina.</h2>
-    <p class="section-sub">ARyze è progettato per i professionisti che ogni giorno affrontano la complessità del cantiere.</p>
-    <div class="target-grid">
-
-      <div class="target-card">
-        <svg class="target-icon" viewBox="0 0 36 36" fill="none">
-          <rect width="36" height="36" rx="9" fill="rgba(0,181,163,0.08)"/>
-          <circle cx="18" cy="18" r="5" stroke="#00B5A3" stroke-width="1.4" fill="none"/>
-          <path d="M18 9v3M18 24v3M9 18h3M24 18h3" stroke="#00B5A3" stroke-width="1.4" stroke-linecap="round"/>
-          <circle cx="18" cy="18" r="1.5" fill="#00B5A3"/>
-        </svg>
-        <h3>General contractor e imprese</h3>
-        <p>Coordinamento di squadre, gestione subappaltatori, verifica avanzamento lavori e non conformità, tutto documentato in tempo reale.</p>
-      </div>
-
-      <div class="target-card">
-        <svg class="target-icon" viewBox="0 0 36 36" fill="none">
-          <rect width="36" height="36" rx="9" fill="rgba(0,181,163,0.08)"/>
-          <rect x="9" y="12" width="18" height="14" rx="2" stroke="#00B5A3" stroke-width="1.4" fill="none"/>
-          <path d="M13 12V9M23 12V9" stroke="#00B5A3" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M13 19h10M13 22h6" stroke="#00B5A3" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        <h3>Direttori lavori e ispettori</h3>
-        <p>Sopralluoghi tracciati, verifiche as-built, comunicazioni con il cantiere sempre documentate e riferite al progetto.</p>
-      </div>
-
-      <div class="target-card">
-        <svg class="target-icon" viewBox="0 0 36 36" fill="none">
-          <rect width="36" height="36" rx="9" fill="rgba(0,181,163,0.08)"/>
-          <rect x="10" y="8" width="16" height="20" rx="2" stroke="#00B5A3" stroke-width="1.4" fill="none"/>
-          <path d="M14 14h8M14 18h8M14 22h5" stroke="#00B5A3" stroke-width="1.4" stroke-linecap="round"/>
-          <circle cx="26" cy="26" r="4" fill="rgba(13,31,29,1)" stroke="#00B5A3" stroke-width="1.2"/>
-          <path d="M24.5 26l1 1 2-2" stroke="#00B5A3" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>Subappaltatori specializzati</h3>
-        <p>Accesso diretto alle specifiche della propria lavorazione e supporto remoto del fornitore, senza dipendere dal coordinamento del cantiere.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PIANI -->
-<section class="piani">
-  <div class="inner">
-    <div class="section-label">Piani</div>
-    <h2 class="section-title">Scegli il piano adatto alla tua impresa.</h2>
-    <p class="section-sub">Nessun prezzo in vetrina: ogni cantiere è diverso. Contattaci per un preventivo calibrato sulle tue esigenze.</p>
-    <div class="piani-grid">
-
-      <div class="piano-card">
-        <div class="piano-name">Standard</div>
-        <h3>Cantiere connesso</h3>
-        <ul class="piano-features">
-          <li>Accesso a documenti di progetto</li>
-          <li>Sessioni remote con esperti</li>
-          <li>Report di avanzamento base</li>
-          <li>Fino a 5 utenti</li>
-          <li>Supporto via email</li>
-        </ul>
-        <a href="#demo" class="btn-outline">Contattaci</a>
-      </div>
-
-      <div class="piano-card featured">
-        <div class="piano-name">Professional</div>
-        <h3>Cantiere intelligente</h3>
-        <ul class="piano-features">
-          <li>Tutto di Standard, più:</li>
-          <li>Collegamento con DMS e modelli BIM</li>
-          <li>Reportistica avanzata e KPI</li>
-          <li>Analisi termiche e visive</li>
-          <li>Fino a 20 utenti</li>
-          <li>Supporto prioritario</li>
-        </ul>
-        <a href="#demo" class="btn-outline">Contattaci</a>
-      </div>
-
-      <div class="piano-card">
-        <div class="piano-name">Enterprise</div>
-        <h3>White-label &amp; custom</h3>
-        <ul class="piano-features">
-          <li>Tutto di Professional, più:</li>
-          <li>Piattaforma brandizzata</li>
-          <li>Integrazione con gestionali aziendali</li>
-          <li>API e connettori custom</li>
-          <li>Utenti illimitati</li>
-          <li>SLA dedicato e onboarding</li>
-        </ul>
-        <a href="#demo" class="btn-outline">Contattaci</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CREDIBILITÀ -->
-<section class="credibilita">
-  <div class="inner">
-    <div class="section-label">Chi c'è dietro ARyze</div>
-    <h2 class="section-title">A joint venture nata dall'industria delle costruzioni.</h2>
-    <div class="cred-grid">
-      <div class="cred-card">
-        <div class="cred-logo-wrap">
-          <a href="https://www.levery.it" target="_blank" rel="noopener">
-            <img src="levery-logo.svg" alt="Levery" class="cred-logo levery-cred" />
-          </a>
-        </div>
-        <div class="co-name"><a href="https://www.levery.it" target="_blank" rel="noopener">Levery S.r.l. Società Benefit</a></div>
-        <p>Partner di R&amp;D per il settore costruzioni, specializzato in materiali bio-based, conformità digitale di prodotto e innovazione dell'involucro edilizio. Startup innovativa con sede nel territorio di Rimini.</p>
-      </div>
-      <div class="cred-card">
-        <div class="cred-logo-wrap">
-          <a href="https://www.exvirience.com" target="_blank" rel="noopener">
-            <img src="exvirience-black.png" alt="Exvirience" class="cred-logo exvirience-cred" />
-          </a>
-        </div>
-        <div class="co-name"><a href="https://www.exvirience.com" target="_blank" rel="noopener">Exvirience S.r.l.</a></div>
-        <p>Specialisti in soluzioni Extended Reality (XR) per ambienti industriali e costruttivi. Esperienza nello sviluppo di applicazioni AR/VR per formazione, manutenzione e gestione operativa.</p>
-      </div>
-    </div>
-    </div>
-</section>
-
-<!-- FORM -->
-<section class="form-section" id="demo">
-  <div class="inner">
-    <div class="form-wrap">
-      <div class="form-intro">
-        <div class="section-label">Richiedi una demo</div>
-        <h2>Pronto a vedere <span>ARyze</span> al lavoro nel tuo cantiere?</h2>
-        <p>Richiedi una demo gratuita personalizzata sul tuo cantiere. Ti risponderemo entro 24 ore.</p>
-        <div class="form-promise">
-          <div class="promise-item"><span class="promise-dot"></span>Demo gratuita e senza impegno</div>
-          <div class="promise-item"><span class="promise-dot"></span>Risposta entro 24 ore lavorative</div>
-          <div class="promise-item"><span class="promise-dot"></span>Nessun venditore, solo tecnici</div>
-        </div>
-      </div>
-      <div class="contact-form">
-        <form action="https://formsubmit.co/info@aryze.it" method="POST">
-          <input type="hidden" name="_subject" value="[ARyze Cantiere] Nuova richiesta di demo" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://aryze.it/grazie.html" />
-          <input type="hidden" name="segmento" value="Cantiere" />
-          <div class="form-row">
-            <div class="form-group"><label>Nome *</label><input type="text" name="nome" placeholder="Mario" required /></div>
-            <div class="form-group"><label>Cognome *</label><input type="text" name="cognome" placeholder="Rossi" required /></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label>Azienda *</label><input type="text" name="azienda" placeholder="Nome azienda" required /></div>
-            <div class="form-group"><label>Ruolo *</label><input type="text" name="ruolo" placeholder="es. Direttore tecnico" required /></div>
-          </div>
-          <div class="form-group"><label>Email *</label><input type="email" name="email" placeholder="mario.rossi@azienda.it" required /></div>
-          <div class="form-group">
-            <label>Il tuo principale interesse</label>
-            <select name="interesse">
-              <option value="">Seleziona...</option>
-              <option>Gestione documentale in cantiere</option>
-              <option>Supporto remoto tra tecnici</option>
-              <option>Reportistica e avanzamento lavori</option>
-              <option>Integrazione con software esistenti</option>
-              <option>Soluzione white-label</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Messaggio</label><textarea name="messaggio" placeholder="Descrivici brevemente il tuo contesto o la tua esigenza..."></textarea></div>
-          <button type="submit" class="form-submit">Richiedi la tua demo gratuita</button>
-          <p class="form-privacy">Inviando accetti la nostra <a href="privacy.html">Privacy Policy</a>. Dati non ceduti a terzi.</p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<!-- FOOTER -->
-<footer>
-  <div class="footer-col footer-brand">
-    <img src="logo-scritta-small.png" alt="ARyze" class="footer-aryze-logo" />
-    <div class="footer-copy">&copy; 2026 ARyze</div>
-  </div>
-  <div class="footer-col footer-center">
-    <div class="footer-jv">A joint venture
-      <a href="https://www.levery.it" target="_blank" rel="noopener"><strong>Levery S.r.l. Società Benefit</strong></a>
-      +
-      <a href="https://www.exvirience.com" target="_blank" rel="noopener"><strong>Exvirience S.r.l.</strong></a>
-    </div>
-    <div class="footer-eu">This project was co-funded by the European Union's Single Market Programme.</div>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <span>&middot;</span>
-      <a href="cookies.html">Cookie Policy</a>
-    </div>
-  </div>
-  <div class="footer-col footer-logos">
-    <a href="https://www.levery.it" target="_blank" rel="noopener">
-      <img src="levery-logo.svg" alt="Levery" class="footer-partner-logo levery-footer" />
-    </a>
-    <a href="https://www.exvirience.com" target="_blank" rel="noopener">
-      <img src="exvirience-black.png" alt="Exvirience" class="footer-partner-logo exvirience-footer" />
-    </a>
-  </div>
-</footer>
-
-</body>
-</html>
-
-
-    @media (max-width: 768px) {
-      nav { padding: 16px 20px; }
-      .nav-segments { display: none; }
-      .hero { padding: 100px 24px 60px; }
-      .segment-cards { grid-template-columns: 1fr; gap: 16px; }
-      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -617,7 +396,7 @@
   <nav>
   <a class="nav-logo" href="index-it.html"><img src="logo-scritta-small.png" alt="ARyze" /></a>
   <div class="nav-segments">
-    <a href="cantiere.html" >Cantiere</a>
+    <a href="cantiere-en.html" >Construction</a>
     <a href="om-en.html">O&amp;M</a>
   </div>
   <div class="nav-right">
@@ -626,7 +405,7 @@
       <span style="color:rgba(0,0,0,.2)">|</span>
       <a href="index-en.html" class="active">EN</a>
     </div>
-    <a class="nav-cta" href="cantiere-en.html#demo" class="nav-cta">Request demo</a>
+    <a class="nav-cta" href="cantiere-en.html#demo">Request demo</a>
   </div>
 </nav>
 
@@ -636,7 +415,7 @@
     <div class="hero-content">
       <span class="hero-eyebrow">Built environment &amp; XR</span>
       <h1>See what you need.<br><span>Do what matters.</span></h1>
-      <p>ARyze ti mostra le informazioni giuste, dove ti serve, mentre sei al lavoro — in cantiere o durante la manutenzione di un edificio. A mani libere, senza fermare i lavori.</p>
+      <p>ARyze shows you the right information, where you need it, while you work, on a construction site or during building maintenance.<br>Hands free, without stopping work.</p>
     </div>
 
     <div class="segment-cards">
