@@ -297,3 +297,9 @@
     .exvirience-cred{height:56px;filter:brightness(10);}
     .cred-card .co-name a{color:var(--teal);text-decoration:none;}
     .cred-card .co-name a:hover{text-decoration:underline;}
+
+/* ── FORM THANK YOU ── */
+.form-thanks{text-align:center;padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap:16px;}
+.form-thanks svg{opacity:.9;}
+.form-thanks h3{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;color:var(--white);}
+.form-thanks p{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;}

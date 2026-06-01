@@ -327,7 +327,7 @@
         </div>
       </div>
       <div class="contact-form">
-        <form action="https://formspree.io/f/mnjrklwe" method="POST">
+        <form action="https://formspree.io/f/mnjrklwe" method="POST" data-submit-label="Request your free demo" data-thanks-title="Request received." data-thanks-msg="We'll get back to you within 24 working hours.">
           <input type="hidden" name="segmento" value="O&M - EN" />
           <div class="form-row">
             <div class="form-group"><label>First name *</label><input type="text" name="nome" placeholder="John" required /></div>
@@ -350,7 +350,7 @@
             </select>
           </div>
           <div class="form-group"><label>Message</label><textarea name="messaggio" placeholder="Briefly describe your context or needs..."></textarea></div>
-          <button type="submit" class="form-submit">Request your free demo</button>
+          <button type="submit" class="form-submit" data-sending="...">Request your free demo</button>
           <p class="form-privacy">By submitting you accept our <a href="privacy.html">Privacy Policy</a>. Data not shared with third parties.</p>
         </form>
       </div>
@@ -387,5 +387,36 @@
   </div>
 </footer>
 
+
+<script>
+  document.querySelectorAll('form[action*="formspree"]').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = btn.getAttribute('data-sending') || '...';
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+        redirect: 'manual'
+      })
+      .then(function(res) {
+        if (res.ok || res.type === 'opaqueredirect') {
+          form.innerHTML = '<div class="form-thanks"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#00B5A3" stroke-width="2"/><path d="M14 24l7 7 13-13" stroke="#00B5A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>' + (form.getAttribute('data-thanks-title') || 'Richiesta ricevuta.') + '</h3><p>' + (form.getAttribute('data-thanks-msg') || 'Ti risponderemo entro 24 ore lavorative.') + '</p></div>';
+        } else {
+          btn.disabled = false;
+          btn.textContent = form.getAttribute('data-submit-label') || 'Richiedi la tua demo gratuita';
+          alert('Errore nell'invio. Riprova o scrivi a info@aryze.it');
+        }
+      })
+      .catch(function() {
+        btn.disabled = false;
+        btn.textContent = form.getAttribute('data-submit-label') || 'Richiedi la tua demo gratuita';
+        alert('Errore di connessione. Riprova o scrivi a info@aryze.it');
+      });
+    });
+  });
+</script>
 </body>
 </html>
