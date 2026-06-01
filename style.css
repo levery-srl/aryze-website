@@ -303,3 +303,8 @@
 .form-thanks svg{opacity:.9;}
 .form-thanks h3{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;color:var(--white);}
 .form-thanks p{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;}
+
+/* ── FORM ERROR ── */
+.form-error{display:none;text-align:center;padding:20px;background:rgba(255,80,80,.08);border:1px solid rgba(255,80,80,.2);border-radius:12px;color:rgba(255,120,120,.9);font-size:14px;font-weight:300;margin-bottom:16px;}
+[data-fs-success]{display:none;}
+[data-fs-error]{display:none;}
