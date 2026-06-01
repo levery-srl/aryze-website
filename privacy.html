@@ -5,216 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ARyze</title>
   <link rel="icon" type="image/png" href="logo.jpg" />
-
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KMV018LXB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3KMV018LXB');
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3KMV018LXB');</script>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    :root {
-      --teal:      #00B5A3;
-      --teal-dark: #008F80;
-      --ink:       #0F1F1E;
-      --muted:     #6B7F7E;
-      --border:    rgba(0,181,163,0.18);
-      --white:     #FFFFFF;
-      --surface:   rgba(255,255,255,0.04);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--ink);
-      color: var(--white);
-      min-height: 100vh;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 48px;
-      background: rgba(15,31,30,0.95);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo img { height: 30px; display: block; }
-    .nav-back {
-      font-family: 'Syne', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--teal);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: gap 0.2s;
-    }
-    .nav-back:hover { gap: 12px; }
-
-    .page-header {
-      padding: 80px 48px 64px;
-      border-bottom: 1px solid var(--border);
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .page-label {
-      font-family: 'Syne', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 16px;
-    }
-
-    .page-header h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-
-    .page-header p {
-      font-size: 15px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-    }
-
-    .content {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 64px 48px 96px;
-    }
-
-    .content h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--teal);
-      margin-top: 48px;
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .content h2:first-child { margin-top: 0; }
-
-    .content p {
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 16px;
-    }
-
-    .content ul {
-      margin: 0 0 16px 0;
-      padding-left: 0;
-      list-style: none;
-    }
-
-    .content ul li {
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.7);
-      padding-left: 20px;
-      position: relative;
-      margin-bottom: 8px;
-    }
-
-    .content ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 11px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--teal);
-      opacity: 0.5;
-    }
-
-    .content a {
-      color: var(--teal);
-      text-decoration: underline;
-    }
-
-    .info-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px 28px;
-      margin: 24px 0;
-    }
-
-    .info-box p { margin: 0; }
-
-    .info-box strong {
-      font-weight: 500;
-      color: var(--white);
-    }
-
-    footer {
-      padding: 40px 48px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    footer img { height: 24px; opacity: 0.55; }
-    .footer-text { font-size: 12px; color: var(--muted); line-height: 1.6; text-align: center; }
-    .footer-text a { color: var(--muted); text-decoration: underline; }
-    .eu-badge { background: rgba(0,181,163,0.1); border: 1px solid rgba(0,181,163,0.2); border-radius: 6px; padding: 4px 10px; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; color: var(--teal); white-space: nowrap; font-family: 'Syne', sans-serif; }
-
-    @media (max-width: 768px) {
-      nav { padding: 14px 20px; }
-      .page-header, .content { padding-left: 24px; padding-right: 24px; }
-      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
-    }
+    .page-wrap{max-width:860px;margin:0 auto;padding:100px 48px 96px;}
+    .page-label{font-family:'Clash Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+    .page-title{font-family:'Clash Display',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px;line-height:1.1;}
+    .page-meta{font-size:13px;color:var(--muted);margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border-dark);}
+    .content-section{margin-bottom:48px;}
+    .content-section h2{font-family:'Clash Display',sans-serif;font-size:18px;font-weight:700;color:var(--teal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border-dark);}
+    .content-section p{font-size:15px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.65);margin-bottom:14px;}
+    .content-section ul{list-style:none;margin-bottom:14px;}
+    .content-section ul li{font-size:15px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.65);padding-left:18px;position:relative;margin-bottom:8px;}
+    .content-section ul li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal);opacity:.5;}
+    .content-section a{color:var(--teal);text-decoration:underline;}
+    .info-box{background:var(--surface-dark);border:1px solid var(--border-dark);border-radius:12px;padding:24px 28px;margin:20px 0;}
+    .info-box p{margin:0;}
+    .info-box strong{font-weight:500;color:var(--white);}
+    @media(max-width:768px){.page-wrap{padding:90px 24px 64px;}}
   </style>
 </head>
 <body>
 
-  <nav>
-    <a class="nav-logo" href="index.html">
-      <img src="logo-scritta-small.png" alt="ARyze" />
-    </a>
-    <a class="nav-back" href="index.html">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="#00B5A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Torna alla home
-    </a>
-  </nav>
-
-  <div class="page-header">
-    <div class="page-label">Informativa legale</div>
-    <h1>Privacy Policy</h1>
-    <p>Ultimo aggiornamento: maggio 2026 &nbsp;&middot;&nbsp; Versione 1.0</p>
+<nav>
+  <a class="nav-logo" href="index-it.html"><img src="logo-scritta-small.png" alt="ARyze" /></a>
+  <div class="nav-segments">
+    <a href="cantiere.html" class="active">Cantiere</a>
+    <a href="om.html">O&amp;M</a>
   </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <a href="cantiere.html" class="active">IT</a>
+      <span style="color:rgba(0,0,0,.2)">|</span>
+      <a href="cantiere-en.html">EN</a>
+    </div>
+    <a class="nav-cta" href="#demo">Richiedi demo</a>
+  </div>
+</nav>
 
-  <div class="content">
+<div class="page-wrap">
+  <div class="page-label">Informativa legale</div>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-meta">Ultimo aggiornamento: maggio 2026 &nbsp;&middot;&nbsp; Versione 1.0</p>
 
+  <div class="content-section">
     <h2>1. Titolare del trattamento</h2>
     <div class="info-box">
       <p><strong>ARyze</strong> è un prodotto sviluppato da:<br><br>
@@ -225,7 +62,9 @@
       in joint venture con <strong>Exvirience S.r.l.</strong></p>
     </div>
     <p>Il Titolare del trattamento dei dati personali raccolti tramite questo sito è Levery S.r.l. Società Benefit, in qualità di responsabile della gestione della piattaforma ARyze.</p>
+  </div>
 
+  <div class="content-section">
     <h2>2. Dati raccolti e finalità</h2>
     <p>Questo sito raccoglie dati personali esclusivamente attraverso il modulo di contatto/richiesta demo. I dati raccolti sono:</p>
     <ul>
@@ -241,14 +80,20 @@
       <li>Gestire il rapporto pre-contrattuale con potenziali clienti</li>
       <li>Analisi aggregata del traffico web per miglioramento del servizio</li>
     </ul>
+  </div>
 
+  <div class="content-section">
     <h2>3. Base giuridica del trattamento</h2>
     <p>Il trattamento dei dati avviene sulla base del consenso dell'interessato (art. 6(1)(a) GDPR), espresso al momento della compilazione e invio del modulo di contatto, e del legittimo interesse del Titolare per le finalità di analisi statistica aggregata del traffico web.</p>
+  </div>
 
+  <div class="content-section">
     <h2>4. Modalità del trattamento e conservazione</h2>
     <p>I dati vengono trattati con strumenti elettronici nel rispetto delle misure di sicurezza previste dal GDPR. I dati inviati tramite il modulo di contatto sono trasmessi via email attraverso il servizio <strong>FormSubmit</strong> (formsubmit.co) e conservati per il tempo necessario a gestire la richiesta e l'eventuale rapporto commerciale, e comunque non oltre 24 mesi dall'ultima interazione.</p>
     <p>I dati di navigazione raccolti tramite Google Analytics sono trattati in forma anonimizzata/aggregata e conservati secondo le politiche di Google LLC.</p>
+  </div>
 
+  <div class="content-section">
     <h2>5. Comunicazione a terzi</h2>
     <p>I dati personali non sono venduti né ceduti a terzi per finalità commerciali. Possono essere comunicati a:</p>
     <ul>
@@ -256,11 +101,14 @@
       <li><strong>Google LLC</strong> — per il servizio Google Analytics 4 (dati aggregati e anonimizzati)</li>
       <li><strong>Exvirience S.r.l.</strong> — partner della joint venture ARyze, limitatamente alla gestione delle richieste demo</li>
     </ul>
-    <p>Tutti i fornitori terzi operano come Responsabili del trattamento ai sensi dell'art. 28 GDPR con adeguate garanzie contrattuali.</p>
+  </div>
 
+  <div class="content-section">
     <h2>6. Trasferimento dati extra-UE</h2>
     <p>Google Analytics può comportare il trasferimento di dati verso gli USA. Google LLC aderisce al Data Privacy Framework UE-USA, garantendo un livello di protezione adeguato ai sensi del GDPR.</p>
+  </div>
 
+  <div class="content-section">
     <h2>7. Diritti dell'interessato</h2>
     <p>Ai sensi degli artt. 15-22 GDPR, l'interessato ha diritto di:</p>
     <ul>
@@ -274,23 +122,47 @@
     </ul>
     <p>Per esercitare i propri diritti, scrivere a: <a href="mailto:info@aryze.it">info@aryze.it</a></p>
     <p>È inoltre possibile proporre reclamo all'Autorità Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>).</p>
-
-    <h2>8. Cookie e tracciamento</h2>
-    <p>Per informazioni dettagliate sull'utilizzo dei cookie, si rimanda alla <a href="cookies.html">Cookie Policy</a>.</p>
-
-    <h2>9. Modifiche alla presente informativa</h2>
-    <p>Il Titolare si riserva il diritto di modificare la presente Privacy Policy in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina con aggiornamento della data. Si consiglia di consultare periodicamente questa pagina.</p>
-
   </div>
 
-  <footer>
-    <img src="logo-scritta-small.png" alt="ARyze" />
-    <div class="footer-text">
-      &copy; 2026 ARyze &mdash; Levery S.r.l. + Exvirience S.r.l.<br>
-      <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="cookies.html">Cookie Policy</a>
+  <div class="content-section">
+    <h2>8. Cookie e tracciamento</h2>
+    <p>Per informazioni dettagliate sull'utilizzo dei cookie, si rimanda alla <a href="cookies.html">Cookie Policy</a>.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>9. Modifiche alla presente informativa</h2>
+    <p>Il Titolare si riserva il diritto di modificare la presente Privacy Policy in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina con aggiornamento della data.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-col footer-brand">
+    <img src="logo-scritta-small.png" alt="ARyze" class="footer-aryze-logo" />
+    <div class="footer-copy">&copy; 2026 ARyze</div>
+  </div>
+  <div class="footer-col footer-center">
+    <div class="footer-jv">Una joint venture
+      <a href="https://www.levery.it" target="_blank" rel="noopener"><strong>Levery S.r.l. Società Benefit</strong></a>
+      +
+      <a href="https://www.exvirience.com" target="_blank" rel="noopener"><strong>Exvirience S.r.l.</strong></a>
     </div>
-    <span class="eu-badge">EU Co-funded</span>
-  </footer>
+    <div class="footer-eu">Progetto co-finanziato dal Programma per il Mercato Unico dell'Unione Europea.</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <span>&middot;</span>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
+  </div>
+  <div class="footer-col footer-logos">
+    <a href="https://www.levery.it" target="_blank" rel="noopener">
+      <img src="levery-logo.svg" alt="Levery" class="footer-partner-logo levery-footer" />
+    </a>
+    <a href="https://www.exvirience.com" target="_blank" rel="noopener">
+      <img src="exvirience-black.png" alt="Exvirience" class="footer-partner-logo exvirience-footer" />
+    </a>
+  </div>
+</footer>
 
 </body>
 </html>
